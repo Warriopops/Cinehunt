@@ -15,12 +15,12 @@
           <%= image_tag "pdp.png" %>
     </div>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
           <div class="container-alert">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
             <i class="fa-solid fa-heart fa-lg" style="color: #ffffff;"></i>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
           </div>
         <% end %>
       </ul>

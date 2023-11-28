@@ -20,6 +20,12 @@ class ScenesController < ApplicationController
     end
   end
 
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def set_scene
@@ -27,6 +33,6 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:title, :description, :location, :other_attributes)
+    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link)
   end
 end

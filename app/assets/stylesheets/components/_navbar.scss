@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #0F2C59;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -44,4 +48,21 @@
 .navbar-lewagon .container-alert img{
   width:40px;
   height:40;
+}
+
+.topnav  {
+  width: 250px;
+  padding: 10px;
+}
+
+.new-offer{
+  background-color: #ffffff;
+  border-radius: 20px 20px 20px 20px;
+  text-decoration:none;
+  color:black;
+  margin-right:40px;
+  padding: 10px;
+}
+.new-offer:hover{
+  background-color: #d2d2d2;
 }

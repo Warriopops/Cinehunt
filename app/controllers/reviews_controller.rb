@@ -10,11 +10,16 @@ class ReviewsController < ApplicationController
       render "scenes/show", status: :unprocessable_entity
     end
   end
+  
+  def destroy
+  end
 
   private
 
   def review_params
     params.require(:review).permit(:rating, :content)
   end
+
+
 
 end

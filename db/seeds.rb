@@ -33,7 +33,7 @@ Scene.create(
   place: new_jersey,
   user: user,
   title: "Loew's Jersey Theatre",
-  content: "C’est ici qu’Arthur Fleck descend le tapis rouge en faisant des cabrioles",
+  content: "Cest ici quArthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
   price: "9€",
 )
@@ -50,7 +50,6 @@ Scene.create(
 Scene.create(
   movie: joker,
   place: new_jersey,
-  title: "The Paramount Theater"
+  title: "The Paramount Theater",
   content: "Abandonné depuis, "
-
 )

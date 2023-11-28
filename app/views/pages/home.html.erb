@@ -1,2 +1,78 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home">
+  <div id="banner" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" id="carousel-1">
+        <h1>Choisit ton film<h1>
+      </div>
+      <div class="carousel-item" id="carousel-2">
+        <h1>Voyage<h1>
+      </div>
+      <div class="carousel-item" id="carousel-3">
+        <h1>Utilise la réalité augmenté !</h1>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <h1>Vos favoris</h1>
+    <div id="carouselExample" class="carousel slide favorite">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-1">
+        </div>
+        <div class="carousel-item" id="carousel-2">
+        </div>
+        <div class="carousel-item" id="carousel-3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <h1>Tendances actuelles</h1>
+      <div id="carouselExample1" class="carousel slide tendance">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-1">
+        </div>
+        <div class="carousel-item" id="carousel-2">
+        </div>
+        <div class="carousel-item" id="carousel-3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <h1>Pour vous</h1>
+      <div id="carouselExample3" class="carousel slide for-you">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-1">
+        </div>
+        <div class="carousel-item" id="carousel-2">
+        </div>
+        <div class="carousel-item" id="carousel-3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  <% else %>
+    <h1>Tendances actuelles</h1>
+    <h1>Halloween</h1>
+    <h1>Horreur</h1>
+  <% end %>
+</div>

@@ -5,6 +5,7 @@ class ScenesController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -16,7 +17,7 @@ class ScenesController < ApplicationController
     if @scene.save
       redirect_to @scene
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

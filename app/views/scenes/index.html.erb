@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Scenes</h1>
+  <ul>
+    <% @scenes.each do |scene| %>
+      <li>
+        <%= link_to scene.title, scene_path(scene) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Ajouter une scene", new_scene_path, class: 'btn btn-primary' %>
+</div>

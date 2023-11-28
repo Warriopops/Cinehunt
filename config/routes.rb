@@ -26,5 +26,4 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:destroy]
   resources :favoris, only: [:destroy]
-
 end

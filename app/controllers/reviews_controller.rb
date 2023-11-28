@@ -10,8 +10,10 @@ class ReviewsController < ApplicationController
       render "scenes/show", status: :unprocessable_entity
     end
   end
-  
+
   def destroy
+    @review.scene.destroy
+    redirect_to scene_path, notice: 'Review was successfully destroyed.'
   end
 
   private

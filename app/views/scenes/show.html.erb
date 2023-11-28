@@ -1,0 +1,11 @@
+<h1>scenes#show</h1>
+
+<h1><%= @scene.title %></h1>
+<h2><%= @scene.rating %></h2>
+
+<%= simple_form_for [@scene, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :content%>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to scene_path(@scene) %>

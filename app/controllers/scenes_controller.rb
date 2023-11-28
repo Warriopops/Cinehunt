@@ -1,10 +1,11 @@
 class ScenesController < ApplicationController
-  before_action :set_scene, only: [:show]
+  # before_action :set_scene, only: [:show]
   def index
     @scenes = Scene.all
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -16,7 +17,7 @@ class ScenesController < ApplicationController
     if @scene.save
       redirect_to @scene
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +30,7 @@ class ScenesController < ApplicationController
   private
 
   def set_scene
-    @scene = Scene.find(params[:id])
+    # @scene = Scene.find(params[:id])
   end
 
   def scene_params

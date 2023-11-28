@@ -24,6 +24,11 @@
               <i class="fa-solid fa-heart fa-lg" style="color: #ffffff;"></i>
             <%= image_tag "pdp.png" %>
           </div>
+          <div class="container-alert">
+          <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-heart fa-lg" style="color: #ffffff;"></i>
+          <%= image_tag "pdp.png" %>
+    </div>
         <% else %>
           <div class="container-alert">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
@@ -32,6 +37,7 @@
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
             </div>
+          </div>
         <% end %>
       </ul>
     </div>

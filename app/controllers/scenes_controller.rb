@@ -1,5 +1,5 @@
 class ScenesController < ApplicationController
-  before_action :set_scene, only: [:show]
+  # before_action :set_scene, only: [:show]
   def index
     @scenes = Scene.all
   end
@@ -29,7 +29,7 @@ class ScenesController < ApplicationController
   private
 
   def set_scene
-    @scene = Scene.find(params[:id])
+    # @scene = Scene.find(params[:id])
   end
 
   def scene_params

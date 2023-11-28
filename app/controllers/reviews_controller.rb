@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
       render "scenes/show", status: :unprocessable_entity
     end
   end
-  
+
   def destroy
   end
 

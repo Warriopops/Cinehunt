@@ -20,12 +20,12 @@ user = User.create(email: "contact@cinehunt", password: "123456")
 puts "user created"
 
 joker = Movie.create(title: 'Joker', category: 'Drame')
-la_maison_du_mal = Movie.create(title: 'La Maison du mal', category: 'Horreur')
+conjuring = Movie.create(title: 'Conjuring', category: 'Horreur')
 barbie = Movie.create(title: 'Barbie', category: 'Comedie')
 
 new_jersey = Place.create(country: 'USA', city: 'Newark, New Jersey')
-los_angeles = Place.create(country: 'USA', city: 'Los Angeles')
-hertfordshire = Place.create(country: 'Royaume-Uni', city: 'Hertfordshire')
+burrillville = Place.create(country: 'USA', city: 'Burrillville, Rhode Island')
+losangeles = Place.create(country: 'USA', city: 'Californie, Los Angeles')
 bronx = Place.create(country: 'USA', city: 'Bronx')
 
 Scene.create(
@@ -35,7 +35,7 @@ Scene.create(
   title: "Loew's Jersey Theatre",
   content: "C’est ici qu’Arthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
-  price: "9€",
+  price: "9€"
 )
 
 Scene.create(
@@ -50,7 +50,24 @@ Scene.create(
 Scene.create(
   movie: joker,
   place: new_jersey,
-  title: "The Paramount Theater"
-  content: "Abandonné depuis, "
+  title: "The Paramount Theater",
+  content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
+  price: "Gratuit"
+)
 
+Scene.create(
+  movie: conjuring,
+  place: burrillville,
+  title: "The Conjuring House",
+  content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
+  rating: 4.9,
+  price: "25-30€"
+)
+
+Scene.create(
+  movie: barbie,
+  place: losangeles,
+  title: "Venice Beach",
+  content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
+  price: "Gratuit",
 )

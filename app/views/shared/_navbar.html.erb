@@ -4,11 +4,26 @@
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo.png" %>
       <% end %>
-      <h1>Welcome...</h1>
     </div>
     <div id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <div class="container-alert" data-controller="toggle">
+              <div data-toggle-target="togglableElement" class="d-none">
+                <%= form_with url: scenes_path, method: :get, class: "topnav" do %>
+                  <div class="input-group rounded">
+                    <%= text_field_tag :query,params[:query],class: "form-control" %>
+                    <button type="submit" class="input-group-text border-0" id="search-addon">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                <% end %>
+              </div>
+              <i data-toggle-target="togglableElement2" data-action="click->toggle#fire" class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
+              <i data-toggle-target="togglableElement3" data-action="click->toggle#fire" class="fa-solid fa-circle-xmark fa-lg d-none" style="color: #ffffff;"></i>
+              <i class="fa-solid fa-heart fa-lg" style="color: #ffffff;"></i>
+            <%= image_tag "pdp.png" %>
+          </div>
           <div class="container-alert">
           <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
           <i class="fa-solid fa-heart fa-lg" style="color: #ffffff;"></i>
@@ -21,8 +36,10 @@
             <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
+            </div>
           </div>
         <% end %>
+      </ul>
     </div>
   </div>
 </div>

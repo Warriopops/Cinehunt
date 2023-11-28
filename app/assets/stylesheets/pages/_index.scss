@@ -1,2 +1,54 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#banner #carousel-1, #banner #carousel-2, #banner #carousel-3, .favorite #carousel-1, .favorite #carousel-2, .favorite #carousel-3,
+.tendance #carousel-1, .tendance #carousel-2, .tendance #carousel-3, .for-you #carousel-1, .for-you #carousel-2, .for-you #carousel-3{
+  height:200px;
+  background-size:cover;
+}
+
+#banner #carousel-1{
+background-image: url("https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg");
+}
+#banner #carousel-2{
+background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/03/web-images.jpg?auto=format&q=60&w=1600&h=824&fit=crop&crop=faces");
+}
+#banner #carousel-3{
+background-image: url("https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg");
+}
+
+.favorite #carousel-1{
+background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2017.2F05.2F10.2F6b7b11a5-b337-4ba6-a65b-71697e7f5d92.2Ejpeg/625x313/background-color/ffffff/quality/80/game-of-thrones-ce-que-cette-serie-culte-nous-apprend-sur-le-pouvoir-en-entreprise.jpg");
+}
+.favorite #carousel-2{
+background-image: url("https://orientxxi.info/IMG/arton4006.jpg?1593602143");
+}
+.favorite #carousel-3{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ2JnE9io4izoLTcSTuJCl9uf3o-33l8iqK25QsLQpxlhIhcwSww8quCHZXPXy12FkxA&usqp=CAU");
+}
+.tendance #carousel-1{
+background-image: url("https://thumb.canalplus.pro/http/unsafe/1440x810/filters:quality(80)/img-hapi.canalplus.pro:80/ServiceImage/ImageID/111323523");
+}
+.tendance #carousel-2{
+background-image: url("https://orientxxi.info/IMG/arton4006.jpg?1593602143");
+}
+.tendance #carousel-3{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ2JnE9io4izoLTcSTuJCl9uf3o-33l8iqK25QsLQpxlhIhcwSww8quCHZXPXy12FkxA&usqp=CAU");
+}
+.for-you #carousel-1{
+background-image: url("https://thumb.canalplus.pro/http/unsafe/1440x810/filters:quality(80)/img-hapi.canalplus.pro:80/ServiceImage/ImageID/108763711");
+}
+.for-you #carousel-2{
+background-image: url("https://orientxxi.info/IMG/arton4006.jpg?1593602143");
+}
+.for-you #carousel-3{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ2JnE9io4izoLTcSTuJCl9uf3o-33l8iqK25QsLQpxlhIhcwSww8quCHZXPXy12FkxA&usqp=CAU");
+}
+.home{
+  margin-bottom:30px;
+}
+.home h1{
+  color:#0F2C59;
+  margin-left:5px;
+  margin-top:5px;
+}

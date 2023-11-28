@@ -50,7 +50,6 @@ Scene.create(
 Scene.create(
   movie: joker,
   place: new_jersey,
-  title: "The Paramount Theater"
+  title: "The Paramount Theater",
   content: "Abandonné depuis, "
-
 )

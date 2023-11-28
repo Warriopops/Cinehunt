@@ -16,19 +16,19 @@ Movie.destroy_all
 User.destroy_all
 
 puts "create first user"
-user = User.create(email: "contact@cinehunt", password: "123456")
+user = User.create!(email: "contact@cinehunt", password: "123456")
 puts "user created"
 
-joker = Movie.create(title: 'Joker', category: 'Drame')
-conjuring = Movie.create(title: 'Conjuring', category: 'Horreur')
-barbie = Movie.create(title: 'Barbie', category: 'Comedie')
+joker = Movie.create!(title: 'Joker', category: 'Drame')
+la_maison_du_mal = Movie.create!(title: 'La Maison du mal', category: 'Horreur')
+barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
 
-new_jersey = Place.create(country: 'USA', city: 'Newark, New Jersey')
-burrillville = Place.create(country: 'USA', city: 'Burrillville, Rhode Island')
-losangeles = Place.create(country: 'USA', city: 'Californie, Los Angeles')
-bronx = Place.create(country: 'USA', city: 'Bronx')
+new_jersey = Place.create!(country: 'USA', city: 'Newark, New Jersey')
+los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
+hertfordshire = Place.create!(country: 'Royaume-Uni', city: 'Hertfordshire')
+bronx = Place.create!(country: 'USA', city: 'Bronx')
 
-Scene.create(
+Scene.create!(
   movie: joker,
   place: new_jersey,
   user: user,
@@ -38,7 +38,7 @@ Scene.create(
   price: "9€"
 )
 
-Scene.create(
+Scene.create!(
   movie: joker,
   place: bronx,
   user: user,
@@ -47,7 +47,7 @@ Scene.create(
   price: "Gratuit"
 )
 
-Scene.create(
+Scene.create!(
   movie: joker,
   place: new_jersey,
   title: "The Paramount Theater",

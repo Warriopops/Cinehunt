@@ -61,11 +61,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_134949) do
   create_table "scenes", force: :cascade do |t|
     t.bigint "place_id", null: false
     t.bigint "movie_id", null: false
-    t.bigint "user_id", null: false
-    t.float "rating"
+    t.bigint "user_id"
+    t.float "rating", default: 0.0
     t.string "content"
     t.float "price"
-    t.boolean "payant"
+    t.boolean "payant", default: false
     t.string "time"
     t.string "link"
     t.datetime "created_at", null: false

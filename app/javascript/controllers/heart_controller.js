@@ -6,13 +6,7 @@ export default class extends Controller {
     console.log('coeur');
   }
 
-  showModal(event) {
-    const sceneId = this.data.get('sceneId');
-    console.log(`${sceneId}`);
-    this.modalTarget.style.display = 'block';
-  }
-
-  hideModal() {
-    this.modalTarget.style.display = 'none';
+  showModal() {
+    this.modalTarget.modal("show");
   }
 }

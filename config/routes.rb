@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :scenes do
-    resources :favoris, only: [:create]
+    resources :favorites, only: [:create]
     resources :reviews, only: [:create]
   end
-  resources :favoris_list, only: [:create, :show] do
+  resources :favorite_lists, only: [:create, :show, :new] do
     resources :scenes, only: [:create]
   end
   resources :users, only: [:show]
@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:destroy]
-  resources :favoris, only: [:destroy]
+  resources :favorites, only: [:destroy, :create]
 end

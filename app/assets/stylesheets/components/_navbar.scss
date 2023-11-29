@@ -3,11 +3,10 @@
   background: #0F2C59;
   top: 0;
   width: 100%;
-  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  flex-grow: 0
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -47,9 +46,30 @@
 .navbar-lewagon .container-alert img{
   width:40px;
   height:40;
+  cursor:pointer;
 }
 .topnav{
   width:200px;
   margin-left:10px;
   margin-right:10px;
+}
+.navbar-lewagon .container-alert .icon{
+  color:white;
+  cursor:pointer;
+}
+.navbar-lewagon .container-alert .icon:hover{
+  color: #EADBC8;
+}
+.navbar-lewagon .dropdown-menu{
+  background-color: #F8F0E5;
+}
+.navbar-lewagon .dropdown-menu a{
+  color:#0F2C59
+}
+.navbar-lewagon .dropdown-menu a:hover{
+  color:#435585;
+  background-color: #EADBC8;
+}
+.navbar-nav .dropdown-menu {
+  position: absolute;
 }

@@ -24,8 +24,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @favorite, remote: true do |f| %>
-        <%= f.association :favorite_list, as: :hidden, input_html: { value: @scene.id } %>
+        <%= simple_form_for @favorite do |f| %>
+        <%= f.association :favorite_list, input_html: { value: @scene.id } %>
         <div class="form-group">
     <%= f.button :submit, 'Ajouter à la liste de favoris', class: 'btn btn-primary' %>
        </div>

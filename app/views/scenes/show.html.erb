@@ -4,9 +4,7 @@
       <h1>scenes#show</h1>
 
         <h1><%= @scene.title %></h1>
-
         <%= render "shared/card_scene" %>
-
     <div class="list-reviews">
       <h2>Reviews</h2>
       <ul>
@@ -25,15 +23,3 @@
 
 
 <%= link_to "delete", scene_path, class: 'btn btn-primary' %>
-
-<div class="scene-card" data-controller="heart" data-heart-scene-id="<%= @scene.id %>">
-  <div class="heart-icon" data-action="click->heart#showModal">&#x2665;</div>
-  <div class="modal" data-heart-target="modal" style="display: none;">
-    <p>Modal content</p>
-    <button data-action="click->heart#hideModal">Fermer</button>
-
-<%= link_to "delete", scene_path(@scene), class: 'btn btn-primary' %>
-    </div>
-
-  </div>
-</div>

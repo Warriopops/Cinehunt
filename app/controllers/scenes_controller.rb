@@ -6,6 +6,7 @@ class ScenesController < ApplicationController
 
   def show
     @review = Review.new
+    @favorite = Favorite.new
   end
 
   def new

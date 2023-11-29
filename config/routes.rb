@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
     resources :reviews, only: [:create]
   end
-  resources :favorite_lists, only: [:create, :show] do
+  resources :favorite_lists, only: [:create, :show, :new] do
     resources :scenes, only: [:create]
   end
   resources :users, only: [:show]

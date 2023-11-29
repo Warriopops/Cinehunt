@@ -1,0 +1,11 @@
+<!-- app/views/scenes/show.html.erb -->
+
+<div class="scene-card" data-controller="heart" data-heart-scene-id="<%= @scene.id %>">
+  <!-- ... le contenu de la carte de la scène ... -->
+  <div class="heart-icon" data-action="click->heart#showModal">&#x2665;</div>
+  <div class="modal" data-heart-target="modal" style="display: none;">
+    <!-- Contenu de la modal pour ajouter à la liste de favoris -->
+    <p>Modal content</p>
+    <button data-action="click->heart#hideModal">Fermer</button>
+  </div>
+</div>

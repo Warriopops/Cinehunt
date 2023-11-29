@@ -1,15 +1,11 @@
-<h1>Liste scenes</h1>
 <div class="container">
-  <h1>Scenes</h1>
-  <ul>
+  <div class="scene-container">
+    <h1>Scenes</h1>
+    <%= link_to "Ajouter une scene", new_scene_path, class: 'btn-card' %>
+  </div>
+  <ul class="cards-scene">
     <% @scenes.each do |scene| %>
-      <li><%= link_to scene.title, scene_path(scene) %></li>
-      <li><%= scene.movie.title %></li>
-      <li><%= scene.price %></li>
-      <li>
-
-      </li>
+      <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene } %></li>
     <% end %>
   </ul>
-  <%= link_to "Ajouter une scene", new_scene_path, class: 'btn btn-primary' %>
 </div>

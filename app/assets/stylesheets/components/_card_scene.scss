@@ -3,9 +3,16 @@
   position:absolute;
   bottom:0;
   right:0;
+  color:white;
 
 }
 
+
 .box {
   position:relative;
+}
+
+.white_frame {
+  border:10px solid white;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
 }

@@ -4,7 +4,25 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "footer";
+@import "button";
+@import "card_scene";
 
 body{
   background-color: #F8F0E5;
+  font-family: 'Montserrat', sans-serif;
+  color: #0F2C59;
+}
+
+h1 {
+  font-family:"quicksand", bold;
+  text-align: center;
+  font-size: 40px;
+  color: #0F2C59;
+}
+
+h2 {
+  font-family:"quicksand", light;
+  text-align:justify;
+  font-size: 20px;
+  color: #0F2C59;
 }

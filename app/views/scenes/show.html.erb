@@ -8,15 +8,17 @@
 
     <%= link_to "Lancer RA <i class='fa-solid fa-camera' style='color: #ffffff';></i>".html_safe, scenes_path, class: 'btn btn-primary'%>
 
+    <%= render "shared/card_content_scene", scene: @scene %>
+
     <div class="list-reviews">
       <h3>Avis sur la scene</h3>
 
 <i class="fa-solid fa-star" style="color: #353b45;"></i>
-        <span class="fa fa-star unchecked"></span>
-        <span class="fa fa-star unchecked"></span>
-        <span class="fa fa-star unchecked"></span>
-        <span class="fa fa-star" style="color: #0F2C59;"></span>
-        <span class="fa fa-star"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa-regular fa-star" style="color: #0F2C59;"></span>
+        <span class="fa-regular fa-star"></span>
 
       <ul>
         <% @scene.reviews.each do |review| %>
@@ -44,4 +46,3 @@
 
   </div>
 </div>
-

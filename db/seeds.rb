@@ -20,12 +20,12 @@ user = User.create!(email: "contact@cinehunt", password: "123456")
 puts "user created"
 
 joker = Movie.create!(title: 'Joker', category: 'Drame')
-la_maison_du_mal = Movie.create!(title: 'La Maison du mal', category: 'Horreur')
+conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
 barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
 
 new_jersey = Place.create!(country: 'USA', city: 'Newark, New Jersey')
 los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
-hertfordshire = Place.create!(country: 'Royaume-Uni', city: 'Hertfordshire')
+burrillville= Place.create!(country: 'USA', city: 'Burillville')
 bronx = Place.create!(country: 'USA', city: 'Bronx')
 
 Scene.create!(
@@ -66,9 +66,8 @@ Scene.create(
 
 Scene.create(
   movie: barbie,
-  place: losangeles,
+  place: los_angeles,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
-  price: "Gratuit",
-  content: "Abandonné depuis, "
+  price: "Gratuit"
 )

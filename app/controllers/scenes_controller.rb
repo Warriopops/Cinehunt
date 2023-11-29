@@ -34,6 +34,6 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link)
+    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id)
   end
 end

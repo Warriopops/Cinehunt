@@ -1,0 +1,16 @@
+<h1>Listes de favoris</h1>
+
+<% if @favorite_lists.any? %>
+  <ul class="list-group">
+    <% @favorite_lists.each do |favorite_list| %>
+      <li class="list-group-item">
+        <%= link_to favorite_list.name, favorite_list_path(favorite_list) %>
+        <%= button_to 'Supprimer', favorite_list, method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: 'btn btn-danger btn-sm float-end' %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Vous n'avez pas encore de listes de favoris.</p>
+<% end %>
+
+<%= link_to 'Créer une nouvelle liste de favoris', new_favorite_list_path, class: 'btn btn-primary mt-3' %>

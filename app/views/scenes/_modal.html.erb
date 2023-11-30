@@ -1,34 +1,57 @@
-<!-- Modal -->
-<!-- Button trigger modal -->
-<!-- Button trigger modal -->
+<!-- Bouton déclencheur de la modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" id="heart-icon">
+    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.920 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+  </svg>
 </button>
 
+<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter aux favoris</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <% if current_user.favorite_lists.any? %>
-        <%= simple_form_for favorite do |f| %>
-        <%= f.association :favorite_list %>
-        <%= f.hidden_field :scene, value: scene.id  %>
-        <div class="form-group">
-          <%= f.button :submit, 'Ajouter à la liste de favoris', class: 'btn btn-primary' %>
-       </div>
-        <% end %>
+        <% if current_user.favorite_lists.any? %>
+          <!-- Utilisateur a des listes de favoris -->
+          <%= simple_form_for favorite do |f| %>
+            <%= f.association :favorite_list, label: "Sélectionner la liste de favoris" %>
+            <%= f.hidden_field :scene, value: scene.id %>
+            <div class="form-group mt-3">
+              <%= f.button :submit, '', class: 'btn btn-link' do %>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" id="heart-icon"></svg>
+              <% end %>
+            </div>
+          <% end %>
         <% else %>
-          <%= link_to "New favorite list", new_favorite_list_path %>
+          <!-- Aucune liste de favoris, proposer de créer une nouvelle liste -->
+          <p>Vous n'avez pas encore de listes de favoris. Créez-en une maintenant :</p>
+          <%= link_to "Créer une nouvelle liste", new_favorite_list_path, class: "btn btn-primary" %>
         <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Script pour basculer entre les classes d'icônes de cœur pleines et vides -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const heartIcon = document.getElementById('heart-icon');
+
+    heartIcon.addEventListener('click', function () {
+      // Basculer entre les classes d'icônes de cœur pleines et vides
+      if (heartIcon.classList.contains('bi-heart')) {
+        heartIcon.classList.remove('bi-heart');
+        heartIcon.classList.add('bi-heart-fill');
+      } else {
+        heartIcon.classList.remove('bi-heart-fill');
+        heartIcon.classList.add('bi-heart');
+      }
+    });
+  });
+</script>

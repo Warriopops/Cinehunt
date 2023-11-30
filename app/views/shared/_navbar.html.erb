@@ -11,7 +11,7 @@
         <% if user_signed_in? %>
           <div class="container-alert" data-controller="toggle">
               <div data-toggle-target="togglableElement" class="d-none">
-                <%= form_with url: scenes_path, method: :get, class: "topnav" do %>
+                <%= form_with url: scenes_path, method: :get do %>
                   <div class="input-group rounded">
                     <%= text_field_tag :query,params[:query],class: "form-control" %>
                     <button type="submit" class="input-group-text border-0" id="search-addon">

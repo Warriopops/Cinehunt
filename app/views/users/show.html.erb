@@ -10,13 +10,13 @@
           <i class="fa-solid fa-user-pen fa-2xl edit-button"></i>
         <% end %>
       </div>
-      <h1>MES TOURNAGES</h1>
+      <h1><strong>MES TOURNAGES</strong></h1>
       <div class="user-profile">
-      <h2>Bonjour <%= @user.username %></h2>
+      <h2 class="image_centre user-greeting">Bonjour <%= @user.username %></h2>
       <p>Niveau : <%= @user.level %></p>
 
      <% if @user.certified? %>
-    <i class="fa-solid fa-certificate"></i>
+    <i class="fa-solid fa-certificate certif-button"></i>
      <% end %>
 </div>
     </div>

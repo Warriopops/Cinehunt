@@ -1,14 +1,29 @@
-<h1>Listes de favoris</h1>
-
 <% if @favorite_lists.any? %>
-  <ul class="list-group">
+  <h1>Listes de favoris</h1>
+
+  <div class="row">
     <% @favorite_lists.each do |favorite_list| %>
-      <li class="list-group-item">
-        <%= link_to favorite_list.name, favorite_list_path(favorite_list) %>
-        <%= button_to 'Supprimer', favorite_list, method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: 'btn btn-danger btn-sm float-end' %>
-      </li>
+      <div class="col-md-4">
+        <%= link_to favorite_list_path(favorite_list), class: 'text-decoration-none' do %>
+          <div class="container-favorite-box">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path d="M1 4.5A2.5 2.5 0 0 1 3.5 2h9A2.5 2.5 0 0 1 15 4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 4.5zM3.5 3A1.5 1.5 0 0 0 2 4.5A1.5 1.5 0 0 0 3.5 6A1.5 1.5 0 0 0 5 4.5A1.5 1.5 0 0 0 3.5 3zm9 0a1.5 1.5 0 0 0-1.5 1.5A1.5 1.5 0 0 0 12.5 6A1.5 1.5 0 0 0 14 4.5A1.5 1.5 0 0 0 12.5 3z"/>
+                <circle cx="3" cy="4" r="1"/>
+                <circle cx="13" cy="4" r="1"/>
+                <circle cx="3" cy="12" r="1"/>
+                <circle cx="13" cy="12" r="1"/>
+              </svg>
+            </div>
+            <div class="content">
+              <h3><%= favorite_list.name %></h3>
+              <p>Nombre de favoris: <%= favorite_list.scenes.count %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% else %>
   <p>Vous n'avez pas encore de listes de favoris.</p>
 <% end %>

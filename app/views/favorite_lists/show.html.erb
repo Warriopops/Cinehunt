@@ -1,0 +1,16 @@
+<h1>Détails de la liste de favoris</h1>
+
+<div class="container-favorite-box">
+  <div class="icon">
+  </div>
+  <div class="content">
+    <h3><%= @favorite_list.name %></h3>
+    <ul>
+      <% @favorite_list.scenes.each do |scene| %>
+        <li><%= scene.title %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<%= link_to 'Retour à la listes de favoris', favorite_lists_path, class: 'btn btn-primary mt-3' %>

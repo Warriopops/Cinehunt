@@ -1,22 +1,19 @@
 
-.container {
+.containeruser {
   margin-top: 60px;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.btn-return {
+.retourbtn {
  color:  #0F2C59;
 }
 
-.btn-edit {
+.editbutton{
   color:  #0F2C59;
 }
 
 .image_centre {
   text-align: center;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
 }

@@ -10,8 +10,10 @@ class FavoriteListsController < ApplicationController
   end
 
   def create
-    @favorite_list = current_user.favorite_lists.build(favorite_list_params)
-
+    @favorite_list = FavoriteList.new(favorite_list_params)
+    @favorite_list.favorite = @favorite
+    @favorite_list.scene = @scene
+    @favorite_list.user = current_user
     if @favorite_list.save
       redirect_to @favorite_list
     else

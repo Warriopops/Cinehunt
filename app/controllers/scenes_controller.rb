@@ -2,6 +2,10 @@ class ScenesController < ApplicationController
   before_action :set_scene, only: [:show]
   def index
     @scenes = Scene.all
+    if params[:query].present?
+    @movies = Movie.where("title ILIKE :query OR category ILIKE :query", query: "%#{params[:query]}%")
+    @places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -15,6 +19,7 @@ class ScenesController < ApplicationController
 
   def create
     @scene = Scene.new(scene_params)
+    @scene.movie = Movie.find(params[:movie_id])
     if @scene.save
       redirect_to @scene
     else

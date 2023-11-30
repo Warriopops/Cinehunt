@@ -7,7 +7,7 @@
           <%= link_to scene_path(scene) do  %>
             <div class="card-img-overlay">
               <h5 class="card-text" ><%= scene.title %>,<%= scene.movie.title %></h5>
-              <h3 class="card-text_right">Country, ville</h3>
+              <h3 class="card-text_right"><%= scene.place.country %>, <%= scene.place.city %></h3>
             </div>
           <% end  %>
       </div>

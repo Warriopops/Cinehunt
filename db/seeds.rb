@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+ActiveRecord::Base.connection.disable_referential_integrity do
 
 puts "start"
 Scene.destroy_all
@@ -16,7 +16,7 @@ Movie.destroy_all
 User.destroy_all
 
 puts "create first user"
-user = User.create!(email: "contact@cinehunt", password: "123456")
+user = User.create!(email: "contact@cinehunt", password: "123456", username: "Bob", level: 30)
 puts "user created"
 
 joker = Movie.create!(title: 'Joker', category: 'Drame')
@@ -33,14 +33,14 @@ loew_jersey = Scene.new(
   place: new_jersey,
   user: user,
   title: "Loew's Jersey Theatre",
-  content: "Cest ici quArthur Fleck descend le tapis rouge en faisant des cabrioles",
+  content: "C’est ici qu’Arthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
   price: "9€"
 )
 loew_jersey.photo.attach(URI.open("https://jerseydigs.com/wp-content/uploads/2021/02/Loews-Jersey-Theatre-Journal-Square-Jersey-City-1.jpg"))
 loew_jersey.save!
 
-Scene.create!(
+Scene.create(
   movie: joker,
   place: bronx,
   user: user,
@@ -49,7 +49,7 @@ Scene.create!(
   price: "Gratuit"
 )
 
-Scene.create!(
+Scene.create(
   movie: joker,
   place: new_jersey,
   title: "The Paramount Theater",
@@ -73,3 +73,4 @@ Scene.create(
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: "Gratuit"
 )
+end

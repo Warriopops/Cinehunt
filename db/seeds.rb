@@ -16,7 +16,7 @@ Movie.destroy_all
 User.destroy_all
 
 puts "create first user"
-user = User.create!(email: "contact@cinehunt", password: "123456", username: "Bob", level: 30)
+user = User.create!(email: "contact@cinehunt.com", password: "123456", username: "Bob", level: 30, certification: true)
 puts "user created"
 
 joker = Movie.create!(title: 'Joker', category: 'Drame')

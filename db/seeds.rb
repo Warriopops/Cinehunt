@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+ActiveRecord::Base.connection.disable_referential_integrity do
 
 puts "start"
 Scene.destroy_all
@@ -19,14 +19,14 @@ puts "create first user"
 user = User.create!(email: "contact@cinehunt", password: "123456", username: "Bob", level: 30)
 puts "user created"
 
-joker = Movie.create(title: 'Joker', category: 'Drame')
-conjuring = Movie.create(title: 'Conjuring', category: 'Horreur')
-barbie = Movie.create(title: 'Barbie', category: 'Comedie')
+joker = Movie.create!(title: 'Joker', category: 'Drame')
+conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
+barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
 
-new_jersey = Place.create(country: 'USA', city: 'Newark, New Jersey')
-burrillville = Place.create(country: 'USA', city: 'Burrillville, Rhode Island')
-losangeles = Place.create(country: 'USA', city: 'Californie, Los Angeles')
-bronx = Place.create(country: 'USA', city: 'Bronx')
+new_jersey = Place.create!(country: 'USA', city: 'Newark, New Jersey')
+los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
+burrillville= Place.create!(country: 'USA', city: 'Burillville')
+bronx = Place.create!(country: 'USA', city: 'Bronx')
 
 Scene.create(
   movie: joker,
@@ -66,8 +66,9 @@ Scene.create(
 
 Scene.create(
   movie: barbie,
-  place: losangeles,
+  place: los_angeles,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
-  price: "Gratuit",
+  price: "Gratuit"
 )
+end

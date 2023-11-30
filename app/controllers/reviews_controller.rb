@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
-
   def create
     @scene = Scene.find(params[:scene_id])
     @review = Review.new(review_params)
     @review.scene = @scene
+    @review.user = current_user
     if @review.save
       redirect_to scene_path(@scene)
     else
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.scene.destroy
-    redirect_to scene_path, notice: 'Review was successfully destroyed.'
+    redirect_to scene_path(@scene), notice: 'Review was successfully destroyed.'
   end
 
   private
@@ -21,7 +21,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:rating, :content)
   end
-
-
-
 end

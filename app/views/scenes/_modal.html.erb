@@ -1,5 +1,7 @@
 
-<i class="fa-regular fa-heart" style="color: #1e1d5d;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+<button type="button" class="btn custom-btn"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="fa-regular fa-heart" style="color: #1e1d5d;"></i>
+</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -10,7 +12,6 @@
       </div>
       <div class="modal-body">
         <% if current_user.favorite_lists.any? %>
-          <!-- Utilisateur a des listes de favoris -->
           <%= simple_form_for favorite do |f| %>
             <%= f.association :favorite_list, label: "Sélectionner la liste de favoris" %>
             <%= f.hidden_field :scene, value: scene.id %>
@@ -37,7 +38,7 @@
     const heartIcon = document.getElementById('heart-icon');
 
     heartIcon.addEventListener('click', function () {
-      // Basculer entre les classes d'icônes de cœur pleines et vides
+
       if (heartIcon.classList.contains('bi-heart')) {
         heartIcon.classList.remove('bi-heart');
         heartIcon.classList.add('bi-heart-fill');

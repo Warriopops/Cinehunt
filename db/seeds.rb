@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+ActiveRecord::Base.connection.disable_referential_integrity do
 
 puts "start"
 Scene.destroy_all
@@ -71,3 +71,4 @@ Scene.create(
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: "Gratuit"
 )
+end

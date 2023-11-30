@@ -7,6 +7,7 @@
 @import "button";
 @import "card_scene";
 @import "card_content_scene";
+@import "favorite_box";
 
 body{
   background-color: #F8F0E5;
@@ -39,14 +40,12 @@ h4 {
   font-family:"quicksand", light;
   text-align:justify;
   font-size: 20px;
-  color: #0F2C59;
 }
 
 h5 {
   font-family:"quicksand", bold;
   text-align:justify;
   font-size: 15px;
-  color: #0F2C59;
 }
 
 h6 {

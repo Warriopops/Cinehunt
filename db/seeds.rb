@@ -17,9 +17,14 @@ Place.destroy_all
 Movie.destroy_all
 User.destroy_all
 
-puts "create first user"
-user = User.create!(email: "contact@cinehunt.com", password: "123456", username: "Bob", level: 30, certification: true)
-puts "user created"
+user = User.create!(email: "barbara@cinehunt.fr", password: "123456", username: "Barbara le jedi", level: 30, certification: true)
+puts "user Barbara created"
+user1 = User.create!(email: "lilian@cinehunt.fr", password: "123456", username: "Lilian le padawan", level: 1, certification: false)
+puts "user Lilian created"
+user2 = User.create!(email: "hilam@cinehunt.fr", password: "123456", username: "Hilam le jedi", level: 30, certification: true)
+puts "user Hilam created"
+user3 = User.create!(email: "thomas@cinehunt.fr", password: "123456", username: "Thomas le jedi", level: 30, certification: true)
+puts "user Thomas created"
 
 joker = Movie.create!(title: 'Joker', category: 'Drame')
 conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
@@ -45,7 +50,7 @@ loew_jersey.save!
 escaliers = Scene.new(
   movie: joker,
   place: bronx,
-  user: user,
+  user: user1,
   title: "Les escaliers",
   content: "Le célèbre escalier qui illustre l'affiche du film",
   price: "Gratuit"

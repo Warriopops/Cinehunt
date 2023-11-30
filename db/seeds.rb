@@ -16,7 +16,7 @@ Movie.destroy_all
 User.destroy_all
 
 puts "create first user"
-user = User.create!(email: "contact@cinehunt", password: "123456")
+user = User.create!(email: "contact@cinehunt", password: "123456", username: "Bob", level: 30)
 puts "user created"
 
 joker = Movie.create!(title: 'Joker', category: 'Drame')
@@ -28,17 +28,17 @@ los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
 burrillville= Place.create!(country: 'USA', city: 'Burillville')
 bronx = Place.create!(country: 'USA', city: 'Bronx')
 
-Scene.create!(
+Scene.create(
   movie: joker,
   place: new_jersey,
   user: user,
   title: "Loew's Jersey Theatre",
-  content: "Cest ici quArthur Fleck descend le tapis rouge en faisant des cabrioles",
+  content: "C’est ici qu’Arthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
   price: "9€"
 )
 
-Scene.create!(
+Scene.create(
   movie: joker,
   place: bronx,
   user: user,
@@ -47,7 +47,7 @@ Scene.create!(
   price: "Gratuit"
 )
 
-Scene.create!(
+Scene.create(
   movie: joker,
   place: new_jersey,
   title: "The Paramount Theater",

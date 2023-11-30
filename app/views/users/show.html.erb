@@ -1,0 +1,25 @@
+<div class="image_centre user_show">
+  <div class="container-user-show">
+      <div class="col-md-1">
+        <%= link_to(scenes_path) do %>
+          <i class="fa-sharp fa-solid fa-arrow-left fa-2xl back-button"></i>
+        <% end %>
+      </div>
+        <%= link_to(scene_path) do %>
+          <%# J'ai mis un faux path parce que l'edit n'est pas encore fait, je le remplace plus tard %>
+          <i class="fa-solid fa-user-pen fa-2xl edit-button"></i>
+        <% end %>
+      </div>
+      <h1>MES TOURNAGES</h1>
+      <div class="user-profile">
+      <h2>Bonjour <%= @user.username %></h2>
+      <p>Niveau : <%= @user.level %></p>
+
+     <% if @user.certified? %>
+    <i class="fa-solid fa-certificate"></i>
+     <% end %>
+</div>
+    </div>
+  </div>
+  </div>
+</div>

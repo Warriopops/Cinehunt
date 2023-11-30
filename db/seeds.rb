@@ -28,7 +28,7 @@ los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
 burrillville= Place.create!(country: 'USA', city: 'Burillville')
 bronx = Place.create!(country: 'USA', city: 'Bronx')
 
-Scene.create!(
+loew_jersey = Scene.new(
   movie: joker,
   place: new_jersey,
   user: user,
@@ -37,12 +37,14 @@ Scene.create!(
   rating: 4.4,
   price: "9€"
 )
+loew_jersey.photo.attach(URI.open("https://jerseydigs.com/wp-content/uploads/2021/02/Loews-Jersey-Theatre-Journal-Square-Jersey-City-1.jpg"))
+loew_jersey.save!
 
 Scene.create!(
   movie: joker,
   place: bronx,
   user: user,
-  title: "Les escaliers du Joker",
+  title: "Les escaliers",
   content: "Le célèbre escalier qui illustre l'affiche du film",
   price: "Gratuit"
 )

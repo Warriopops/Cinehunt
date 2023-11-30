@@ -8,7 +8,9 @@ class Scene < ApplicationRecord
   validates :rating, presence: true
   validates :content, presence: true
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :favorites
+
+  has_one_attached :photo
 
 end

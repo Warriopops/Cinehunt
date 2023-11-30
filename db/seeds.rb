@@ -40,7 +40,7 @@ loew_jersey = Scene.new(
 loew_jersey.photo.attach(URI.open("https://jerseydigs.com/wp-content/uploads/2021/02/Loews-Jersey-Theatre-Journal-Square-Jersey-City-1.jpg"))
 loew_jersey.save!
 
-Scene.create(
+escaliers = Scene.new(
   movie: joker,
   place: bronx,
   user: user,
@@ -48,16 +48,20 @@ Scene.create(
   content: "Le célèbre escalier qui illustre l'affiche du film",
   price: "Gratuit"
 )
+escaliers.photo.attach(URI.open("https://fr.web.img4.acsta.net/r_654_368/newsv7/19/10/24/14/31/2884301.jpg"))
+escaliers.save!
 
-Scene.create(
+paramount_theater = Scene.new(
   movie: joker,
   place: new_jersey,
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
   price: "Gratuit"
 )
+paramount_theater.photo.attach(URI.open("https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.nj.com/home/njo-media/width2048/img/essex_impact/photo/2018/10/12/24954100-standard.jpg"))
+paramount_theater.save!
 
-Scene.create(
+conjuring = Scene.new(
   movie: conjuring,
   place: burrillville,
   title: "The Conjuring House",
@@ -65,12 +69,16 @@ Scene.create(
   rating: 4.9,
   price: "25-30€"
 )
+conjuring.photo.attach(URI.open("https://imageio.forbes.com/specials-images/imageserve/629003d4d07c7f069f74921f/Haunted-House--Colonial-house/960x0.jpg?format=jpg&width=960https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"))
+conjuring.save!
 
-Scene.create(
+venice_beach = Scene.create(
   movie: barbie,
   place: los_angeles,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: "Gratuit"
 )
+venice_beach.photo.attach(URI.open("https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"))
+venice_beach.save!
 end

@@ -16,3 +16,8 @@
 
 @import "pages/form";
 @import "components/_favorite_box.scss";
+
+
+body {
+  min-height: 100vh;
+}

@@ -13,10 +13,41 @@
   color:  #0F2C59;
 }
 
-.image_centre {
+.container-show-user .image_centre {
   text-align: center;
 }
 
-.user-greeting {
+.container-show-user .user-greeting {
   font-size: 21px;
+}
+
+.container-show-user .certif-button {
+  font-size: 50px
+}
+
+.container-show-user .myfavlist {
+    width: 400px;
+    height: 65px;
+    background: #435585;
+}
+
+.container-show-user .heart {
+  color: #ffffff;
+  font-size: 30px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.container-show-user .titre {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+    margin-right: 10px;
+    padding-top: 20px;
+}
+
+.container-show-user .btn {
+  float: left;
+
 }

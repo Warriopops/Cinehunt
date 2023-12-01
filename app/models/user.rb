@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorite_lists, dependent: :destroy
-  has_many :favorites, through: :favorite_lists, dependent: :destroy
+  has_many :favorites, through: :favorite_lists
   validates :username, presence: true, uniqueness: true
   has_many :reviews
   has_many :scenes
@@ -13,4 +13,10 @@ class User < ApplicationRecord
   def certified?
     self.certification
   end
+
+  def favorite_scenes
+    favorite_scene_ids = self.favorites.map { |favorite| favorite.scene_id}
+    Scene.where(id:favorite_scene_ids)
+  end
+
 end

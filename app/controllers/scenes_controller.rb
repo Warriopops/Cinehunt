@@ -4,10 +4,19 @@ class ScenesController < ApplicationController
     @scenes = Scene.all
     @favorite = Favorite.new
     @scene = Scene.new
+    #if params[:query].present?
+    #@movies = Movie.where("title ILIKE :query OR category ILIKE :query", query: "%#{params[:query]}%")
+    #@places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")
+    #end
     if params[:query].present?
-    @movies = Movie.where("title ILIKE :query OR category ILIKE :query", query: "%#{params[:query]}%")
-    @places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")
-    end
+      sql_subquery = <<~SQL
+      movies.title ILIKE :query
+      OR movies.category ILIKE :query
+      OR places.country ILIKE :query
+      OR places.city ILIKE :query
+      SQL
+    @scenes = @scenes.joins(:movie, :place).where(sql_subquery, query: "%#{params[:query]}%")
+  end
   end
 
   def show

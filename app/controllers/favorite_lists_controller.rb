@@ -13,7 +13,7 @@ class FavoriteListsController < ApplicationController
   def create
     @favorite_list = current_user.favorite_lists.build(favorite_list_params)
     if @favorite_list.save
-      redirect_to @favorite_list
+      redirect_to favorite_lists_path
     else
       render :new, status: :unprocessable_entity
     end

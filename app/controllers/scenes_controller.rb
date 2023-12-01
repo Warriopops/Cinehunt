@@ -3,7 +3,6 @@ class ScenesController < ApplicationController
   def index
     @scenes = Scene.all
     @favorite = Favorite.new
-    @scene = Scene.new
     if params[:query].present?
     @movies = Movie.where("title ILIKE :query OR category ILIKE :query", query: "%#{params[:query]}%")
     @places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")

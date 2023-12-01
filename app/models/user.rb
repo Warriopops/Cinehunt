@@ -18,5 +18,4 @@ class User < ApplicationRecord
     favorite_scene_ids = self.favorites.map { |favorite| favorite.scene_id}
     Scene.where(id:favorite_scene_ids)
   end
-
 end

@@ -14,7 +14,7 @@
       <div class="modal-body">
        <% if current_user.favorite_lists.any? %>
   <%= simple_form_for Favorite.new, url: favorites_path, method: :post do |f| %>
-    <%= f.hidden_field :scene_id, value: scene.id %>
+    <%= f.hidden_field :scene_id, value: scene.id if scene%>
     <div class="form-group mt-3">
       <%= f.collection_select :favorite_list_id, current_user.favorite_lists, :id, :name, { prompt: "Sélectionner une liste" }, class: 'form-select' %>
     </div>

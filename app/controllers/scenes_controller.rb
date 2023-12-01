@@ -30,9 +30,11 @@ class ScenesController < ApplicationController
 
   def create
     @scene = Scene.new(scene_params)
+    @scene.user_id = current_user.id
+    raise
     @scene.movie = Movie.find(params[:movie_id])
     if @scene.save
-      redirect_to @scene
+      redirect_to root_path, notice: "Good job !"
     else
       render :new, status: :unprocessable_entity
     end

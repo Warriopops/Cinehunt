@@ -15,7 +15,7 @@
             <h5>Avis sur la scene:</h5>
           </div>
               <% @scene.reviews.each do |review| %>
-                <div class="list-reviews col-sm-10 col-sm-offset-1">
+                <div class="list-reviews col-8 col-sm-offset-1">
                 <p><%= review.scene.user.username %></p>
                 <p><%= review.content %></p>
                 <p><%= review.rating/5 %></p>

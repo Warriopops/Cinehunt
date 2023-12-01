@@ -1,3 +1,4 @@
+<div class="container-show-user">
 <div class="image_centre user_show">
   <div class="container-user-show">
       <div class="col-md-1">
@@ -18,8 +19,38 @@
      <% if @user.certified? %>
     <i class="fa-solid fa-certificate certif-button"></i>
      <% end %>
-</div>
+     <div class="space-between-sections" style="margin-bottom: 30px;"></div>
+
+    <h2>Vos favoris</h2>
+    <div id="carouselExample" class="carousel slide favorite">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-1">
+        </div>
+        <div class="carousel-item" id="carousel-2">
+        </div>
+        <div class="carousel-item" id="carousel-3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+    <div class="space-between-sections" style="margin-bottom: 30px;"></div>
+    <h3>Vos listes</h3>
+    <div class="myfavlist">
+    <i class="fa-solid fa-heart heart"></i>
+    <p class="titre"> Mes endroits favoris </p>
+   </div>
+    </div>
+ <%= link_to(new_scene_path, class: "btn") do %>
+  Créer une liste favorite
+   <% end %>
+   <div class="space-between-sections" style="margin-bottom: 50px;"></div>
   </div>
   </div>
 </div>

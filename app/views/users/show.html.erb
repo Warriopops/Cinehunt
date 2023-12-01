@@ -47,8 +47,13 @@
     <p class="titre"> Mes endroits favoris </p>
    </div>
     </div>
- <%= link_to(new_scene_path, class: "btn") do %>
-  Créer une liste favorite
+ <%= link_to(favorite_lists_path, class: "btn") do %>
+  Mes listes favorites
+   <% end %>
+
+
+    <%= link_to(new_favorite_list_path, class: "btn") do %>
+  Créer une nouvelle liste
    <% end %>
    <div class="space-between-sections" style="margin-bottom: 50px;"></div>
   </div>

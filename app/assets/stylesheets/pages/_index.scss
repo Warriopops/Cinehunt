@@ -1,22 +1,27 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "users/show";
+@import "components/button";
 
-#banner #carousel-1, #banner #carousel-2, #banner #carousel-3, .favorite #carousel-1, .favorite #carousel-2, .favorite #carousel-3,
+#banner #carousel-1, #banner #carousel-2, #banner #carousel-3, #banner #carousel-4, .favorite #carousel-1, .favorite #carousel-2, .favorite #carousel-3,
 .tendance #carousel-1, .tendance #carousel-2, .tendance #carousel-3, .for-you #carousel-1, .for-you #carousel-2, .for-you #carousel-3{
   height:200px;
   background-size:cover;
+  background-position: center;
 }
 
 #banner #carousel-1{
-background-image: url("https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg");
+background-image: url("https://i.insider.com/568c4712c08a8034008b7250?width=600&format=jpeg&auto=webp");
 }
 #banner #carousel-2{
-background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/03/web-images.jpg?auto=format&q=60&w=1600&h=824&fit=crop&crop=faces");
+background-image: url('../../../images/banner_harry.png');
 }
 #banner #carousel-3{
-background-image: url("https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive-960x540.jpg");
+background-image: url("https://www.fangirlquest.com/wp-content/uploads/2016/04/forrest-gump-filming-location-monument-valley-1408.jpg");
 }
+#banner #carousel-4{
+  background-image: url("https://www.fangirlquest.com/wp-content/uploads/2016/05/starwars-filming-location-puzzlewood-1414.jpg");
+  }
 
 .favorite #carousel-1{
 background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2017.2F05.2F10.2F6b7b11a5-b337-4ba6-a65b-71697e7f5d92.2Ejpeg/625x313/background-color/ffffff/quality/80/game-of-thrones-ce-que-cette-serie-culte-nous-apprend-sur-le-pouvoir-en-entreprise.jpg");
@@ -52,4 +57,13 @@ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ
   color:#0F2C59;
   margin-left:5px;
   margin-top:5px;
+}
+
+.home h3{
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size:20px;
+  margin-left:5px;
+  margin-top:30px;
 }

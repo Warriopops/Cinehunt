@@ -1,14 +1,25 @@
-<h1>Listes de favoris</h1>
-
 <% if @favorite_lists.any? %>
-  <ul class="list-group">
+  <h1>Listes de favoris</h1>
+
+  <div class="row">
     <% @favorite_lists.each do |favorite_list| %>
-      <li class="list-group-item">
-        <%= link_to favorite_list.name, favorite_list_path(favorite_list) %>
-        <%= button_to 'Supprimer', favorite_list, method: :delete, data: { confirm: 'Êtes-vous sûr?' }, class: 'btn btn-danger btn-sm float-end' %>
-      </li>
+      <div class="col-md-4">
+        <%= link_to favorite_list_path(favorite_list), class: 'text-decoration-none' do %>
+          <div class="container-favorite-box">
+            <div class="icon">
+              <i class="fa-sharp fa-solid fa-heart" style="color: #ca5353;"></i>
+            </div>
+            <div class="content">
+              <h3><%= favorite_list.name %></h3>
+              <p>Nombre de favoris: <%= favorite_list.favorites.count %></p>
+            </div>
+          </div>
+        <% end %>
+
+        <%= button_to "Supprimer", favorite_list_path(favorite_list), method: :delete, data: { confirm: 'Vous êtes sûr ?' }, class: 'btn btn-danger btn-sm mt-2' %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% else %>
   <p>Vous n'avez pas encore de listes de favoris.</p>
 <% end %>

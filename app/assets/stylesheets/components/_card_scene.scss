@@ -4,7 +4,8 @@
   bottom:0;
   right:0;
   color:white;
-
+  font-size:20px;
+  margin-right: 5px;
 }
 
 .card-text {
@@ -12,15 +13,33 @@
   top:0;
   left:0;
   color:white;
+  font-size:20px;
+  margin-left: 5px;
 }
 
-.box {
-  position:relative;
-}
 
 .white_frame {
   border:5px solid white;
   box-shadow: 0 0 16px rgba(0,0,0,0.1);
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.card_up {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.top-fixed {
+  position: relative;
+  bottom: 30px;
+  right: -292px;
+  top: -11px;
+}
+
+.overlink {
+  display: block;
+  width: 80%;
+  height: 100%;
 }

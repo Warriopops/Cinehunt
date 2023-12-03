@@ -1,8 +1,9 @@
 
-<button type="button" class="btn custom-btn"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-  <i class="fa-regular fa-heart" style="color: #1e1d5d;"></i>
-</button>
 
+<button type="button" class="custom-btn top-fixed"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-regular fa-heart fa-2xl" style="color: #ffffff;"></i>
+
+</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -11,20 +12,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <% if current_user.favorite_lists.any? %>
-          <%= simple_form_for favorite do |f| %>
-            <%= f.association :favorite_list, label: "Sélectionner la liste de favoris" %>
-            <%= f.hidden_field :scene, value: scene.id %>
-            <div class="form-group mt-3">
-              <%= f.button :submit, '', class: 'btn btn-link' do %>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" id="heart-icon"></svg>
-              <% end %>
-            </div>
-          <% end %>
-        <% else %>
-          <p>Vous n'avez pas encore de listes de favoris. Créez-en une maintenant :</p>
-          <%= link_to "Créer une nouvelle liste", new_favorite_list_path, class: "btn btn-primary" %>
-        <% end %>
+       <% if current_user.favorite_lists.any? %>
+  <%= simple_form_for Favorite.new, url: favorites_path, method: :post do |f| %>
+    <%= f.hidden_field :scene_id, value: scene.id if scene%>
+    <div class="form-group mt-3">
+      <%= f.collection_select :favorite_list_id, current_user.favorite_lists, :id, :name, { prompt: "Sélectionner une liste" }, class: 'form-select' %>
+    </div>
+    <div class="form-group mt-3">
+      <%= f.button :submit, 'Ajouter', class: 'btn btn-link' do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+          viewBox="0 0 16 16" id="heart-icon"></svg>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Vous n'avez pas encore de listes de favoris. Créez-en une maintenant :</p>
+  <%= link_to "Créer une nouvelle liste", new_favorite_list_path, class: "btn btn-primary" %>
+<% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -32,20 +36,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const heartIcon = document.getElementById('heart-icon');
-
-    heartIcon.addEventListener('click', function () {
-
-      if (heartIcon.classList.contains('bi-heart')) {
-        heartIcon.classList.remove('bi-heart');
-        heartIcon.classList.add('bi-heart-fill');
-      } else {
-        heartIcon.classList.remove('bi-heart-fill');
-        heartIcon.classList.add('bi-heart');
-      }
-    });
-  });
-</script>

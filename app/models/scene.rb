@@ -5,7 +5,6 @@ class Scene < ApplicationRecord
   belongs_to :movie
   belongs_to :user, optional: true
 
-  validates :rating, presence: true
   validates :content, presence: true
 
   has_many :reviews, dependent: :destroy

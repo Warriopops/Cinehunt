@@ -17,6 +17,7 @@
               <% @scene.reviews.each do |review| %>
 
                 <p><%= review.user.username %></p>
+
                 <p><%= review.content %></p>
                 <p><%= review.rating%>/5</p>
               <% end %>

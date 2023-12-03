@@ -12,6 +12,15 @@ class ScenesController < ApplicationController
       SQL
     @scenes = @scenes.joins(:movie, :place).where(sql_subquery, query: "%#{params[:query]}%")
     end
+    # The `geocoded` scope filters only scenes with coordinates
+    @places = Place.all
+    @markers = @places.geocoded.map do |place|
+      {
+        latitude: place.latitude,
+        longitude: place.longitude
+      }
+    end
+
   end
 
   def show

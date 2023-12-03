@@ -7,10 +7,11 @@ class ScenesController < ApplicationController
     @places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")
     end
     # The `geocoded` scope filters only scenes with coordinates
-    @markers = @scenes.geocoded.map do |scene|
+    @places = Place.all
+    @markers = @places.geocoded.map do |place|
       {
-        lat: scene.latitude,
-        lng: scene.longitude
+        latitude: place.latitude,
+        longitude: place.longitude
       }
     end
 

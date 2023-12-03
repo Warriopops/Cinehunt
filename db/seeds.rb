@@ -30,10 +30,15 @@ joker = Movie.create!(title: 'Joker', category: 'Drame')
 conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
 barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
 
-new_jersey = Place.create!(country: 'USA', city: 'Newark, New Jersey', adress: '54 Journal Square Plaza, Jersey City, NJ 07306, États-Unis')
-los_angeles = Place.create!(country: 'USA', city: 'Los Angeles', adress: '1800 Ocean Front Walk, Venice, CA 90291, États-Unis')
-burrillville = Place.create!(country: 'USA', city: 'Burillville', adress: '1677 Round Top Rd, Burrillville, RI 02830, États-Unis')
-bronx = Place.create!(country: 'USA', city: 'Bronx', adress: 'West 167th Street,Bronx État de New York, États-Unis')
+new_jersey = Place.new(country: 'USA', city: 'Newark, New Jersey', address: '54 Journal Square Plaza, Jersey City, NJ 07306, États-Unis')
+los_angeles = Place.new(country: 'USA', city: 'Los Angeles', address: '2637 Main St, Santa Monica, CA 90405, États-Unis')
+burrillville = Place.new(country: 'USA', city: 'Burillville', address: '1677 Round Top Rd, Burrillville, RI 02830, États-Unis')
+bronx = Place.new(country: 'USA', city: 'Bronx', address: 'Bronx, État de New York 10452, États-Unis')
+
+new_jersey.save
+los_angeles.save
+burrillville.save
+bronx.save
 
 loew_jersey = Scene.new(
   movie: joker,

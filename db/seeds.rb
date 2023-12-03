@@ -61,6 +61,7 @@ escaliers.save!
 paramount_theater = Scene.new(
   movie: joker,
   place: new_jersey,
+  user: user1,
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
   price: "Gratuit"
@@ -71,6 +72,7 @@ paramount_theater.save!
 conjuring = Scene.new(
   movie: conjuring,
   place: burrillville,
+  user: user1,
   title: "The Conjuring House",
   content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
   rating: 4.9,
@@ -82,6 +84,7 @@ conjuring.save!
 venice_beach = Scene.create(
   movie: barbie,
   place: los_angeles,
+  user: user1,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: "Gratuit"

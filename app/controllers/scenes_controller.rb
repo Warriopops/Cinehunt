@@ -11,7 +11,7 @@ class ScenesController < ApplicationController
       OR places.city ILIKE :query
       SQL
     @scenes = @scenes.joins(:movie, :place).where(sql_subquery, query: "%#{params[:query]}%")
-  end
+    end
   end
 
   def show

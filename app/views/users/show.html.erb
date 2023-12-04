@@ -15,6 +15,7 @@
       <div class="user-profile">
       <h2 class="image_centre user-greeting">Bonjour <%= @user.username %></h2>
       <p>Niveau : <%= @user.level %></p>
+        <p>Points : <%= @user.points %></p>
 
      <% if @user.certified? %>
     <i class="fa-solid fa-certificate certif-button"></i>

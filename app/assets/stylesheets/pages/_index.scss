@@ -3,25 +3,22 @@
 @import "users/show";
 @import "components/button";
 
-#banner #carousel-1, #banner #carousel-2, #banner #carousel-3, #banner #carousel-4, .favorite #carousel-1, .favorite #carousel-2, .favorite #carousel-3,
+.favorite #carousel-1, .favorite #carousel-2, .favorite #carousel-3,
 .tendance #carousel-1, .tendance #carousel-2, .tendance #carousel-3, .for-you #carousel-1, .for-you #carousel-2, .for-you #carousel-3{
   height:200px;
   background-size:cover;
   background-position: center;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black
 }
 
-#banner #carousel-1{
-background-image: url("../../app/assets/images/banner_harry.png");
+.home-banner{
+  background-image: linear-gradient(#00000073, #00000080), url("https://res.cloudinary.com/djwoknd7s/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1701685377/Capture_d_e%CC%81cran_2023-12-04_a%CC%80_11.18.39_yvrsp9.jpg?_s=public-apps");
+  height: 610px;
+  background-size:cover;
+  background-position: center;
+  z-index: 1;
 }
-#banner #carousel-2{
-background-image: url('../../../images/banner_harry.png');
-}
-#banner #carousel-3{
-background-image: url("https://www.fangirlquest.com/wp-content/uploads/2016/04/forrest-gump-filming-location-monument-valley-1408.jpg");
-}
-#banner #carousel-4{
-  background-image: url("https://www.fangirlquest.com/wp-content/uploads/2016/05/starwars-filming-location-puzzlewood-1414.jpg");
-  }
 
 .favorite #carousel-1{
 background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2017.2F05.2F10.2F6b7b11a5-b337-4ba6-a65b-71697e7f5d92.2Ejpeg/625x313/background-color/ffffff/quality/80/game-of-thrones-ce-que-cette-serie-culte-nous-apprend-sur-le-pouvoir-en-entreprise.jpg");
@@ -59,11 +56,43 @@ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ
   margin-top:5px;
 }
 
-.home h3{
-  color: white;
+.home h3, .home h4{
+  color: black;
   text-align: center;
   align-items: center;
-  font-size:20px;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 28px;
+  word-spacing: 2px;
+  color: black;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
   margin-left:5px;
-  margin-top:30px;
+  border: 2px solid black;
+  background-color: rgb(255, 213, 134);
+  opacity: 0.80;
+  width:380px;
+}
+.home h4{
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+.home .logo{
+  width:400px;
+  height: 125px;
+}
+.home h5{
+  color: black;
+  align-items: center;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 28px;
+  word-spacing: 2px;
+  text-align: center;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  margin-left:5px;
+  opacity: 0.80;
+  width:380px;
+  margin-top: 20px;
+  margin-bottom: 20px
 }

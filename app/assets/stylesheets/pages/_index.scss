@@ -13,7 +13,7 @@
 }
 
 .home-banner{
-  background-image: linear-gradient(#00000073, #00000080), url("https://res.cloudinary.com/djwoknd7s/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1701685377/Capture_d_e%CC%81cran_2023-12-04_a%CC%80_11.18.39_yvrsp9.jpg?_s=public-apps");
+  background-image: linear-gradient(#000000b3, #00000080), url("https://res.cloudinary.com/djwoknd7s/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1701685377/Capture_d_e%CC%81cran_2023-12-04_a%CC%80_11.18.39_yvrsp9.jpg?_s=public-apps");
   height: 610px;
   background-size:cover;
   background-position: center;
@@ -57,24 +57,19 @@ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ
 }
 
 .home h3, .home h4{
-  color: black;
+  color: white;
   text-align: center;
   align-items: center;
   font-family: Impact, Charcoal, sans-serif;
   font-size: 28px;
   word-spacing: 2px;
-  color: black;
-  text-decoration: none solid rgb(68, 68, 68);
-  font-style: italic;
   margin-left:5px;
-  border: 2px solid black;
-  background-color: rgb(255, 213, 134);
   opacity: 0.80;
   width:380px;
 }
 .home h4{
-  margin-top: 20px;
-  margin-bottom: 20px
+  margin-top: 30px;
+  margin-bottom: 30px
 }
 
 .home .logo{
@@ -89,10 +84,9 @@ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQ
   word-spacing: 2px;
   text-align: center;
   text-decoration: none solid rgb(68, 68, 68);
-  font-style: italic;
   margin-left:5px;
   opacity: 0.80;
   width:380px;
-  margin-top: 20px;
-  margin-bottom: 20px
+  margin-top: 40px;
+  margin-bottom: 30px
 }

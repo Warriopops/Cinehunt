@@ -3,11 +3,6 @@ class ScenesController < ApplicationController
   def index
     @scenes = Scene.all
     @favorite = Favorite.new
-    @scene = Scene.new
-    #if params[:query].present?
-    #@movies = Movie.where("title ILIKE :query OR category ILIKE :query", query: "%#{params[:query]}%")
-    #@places = Place.where("city ILIKE :query OR country ILIKE :query", query: "%#{params[:query]}%")
-    #end
     if params[:query].present?
       sql_subquery = <<~SQL
       movies.title ILIKE :query
@@ -16,7 +11,16 @@ class ScenesController < ApplicationController
       OR places.city ILIKE :query
       SQL
     @scenes = @scenes.joins(:movie, :place).where(sql_subquery, query: "%#{params[:query]}%")
-  end
+    end
+    # The `geocoded` scope filters only scenes with coordinates
+    @places = Place.all
+    @markers = @places.geocoded.map do |place|
+      {
+        latitude: place.latitude,
+        longitude: place.longitude
+      }
+    end
+
   end
 
   def show
@@ -30,9 +34,11 @@ class ScenesController < ApplicationController
 
   def create
     @scene = Scene.new(scene_params)
+    @scene.user_id = current_user.id
+    raise
     @scene.movie = Movie.find(params[:movie_id])
     if @scene.save
-      redirect_to @scene
+      redirect_to root_path, notice: "Good job !"
     else
       render :new, status: :unprocessable_entity
     end

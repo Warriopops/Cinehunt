@@ -30,17 +30,22 @@ joker = Movie.create!(title: 'Joker', category: 'Drame')
 conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
 barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
 
-new_jersey = Place.create!(country: 'USA', city: 'Newark, New Jersey')
-los_angeles = Place.create!(country: 'USA', city: 'Los Angeles')
-burrillville = Place.create!(country: 'USA', city: 'Burillville')
-bronx = Place.create!(country: 'USA', city: 'Bronx')
+new_jersey = Place.new(country: 'USA', city: 'Newark, New Jersey', address: '54 Journal Square Plaza, Jersey City, NJ 07306, États-Unis')
+los_angeles = Place.new(country: 'USA', city: 'Los Angeles', address: '2637 Main St, Santa Monica, CA 90405, États-Unis')
+burrillville = Place.new(country: 'USA', city: 'Burillville', address: '1677 Round Top Rd, Burrillville, RI 02830, États-Unis')
+bronx = Place.new(country: 'USA', city: 'Bronx', address: 'Bronx, État de New York 10452, États-Unis')
+
+new_jersey.save
+los_angeles.save
+burrillville.save
+bronx.save
 
 loew_jersey = Scene.new(
   movie: joker,
   place: new_jersey,
   user: user,
   title: "Loew's Jersey Theatre",
-  content: "C’est ici qu’Arthur Fleck descend le tapis rouge en faisant des cabrioles",
+  content: "C'est ici qu'Arthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
   price: "9€"
 )
@@ -61,6 +66,7 @@ escaliers.save!
 paramount_theater = Scene.new(
   movie: joker,
   place: new_jersey,
+  user: user1,
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
   price: "Gratuit"
@@ -71,6 +77,7 @@ paramount_theater.save!
 conjuring = Scene.new(
   movie: conjuring,
   place: burrillville,
+  user: user1,
   title: "The Conjuring House",
   content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
   rating: 4.9,
@@ -82,6 +89,7 @@ conjuring.save!
 venice_beach = Scene.create(
   movie: barbie,
   place: los_angeles,
+  user: user1,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: "Gratuit"

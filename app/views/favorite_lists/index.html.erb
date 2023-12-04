@@ -1,27 +1,88 @@
-<% if @favorite_lists.any? %>
-  <h1>Listes de favoris</h1>
+<div class="container">
+  <% if @favorite_lists.any? %>
+    <h1 class="text-center mb-4">Listes de favoris</h1>
 
-  <div class="row">
-    <% @favorite_lists.each do |favorite_list| %>
-      <div class="col-md-4">
-        <%= link_to favorite_list_path(favorite_list), class: 'text-decoration-none' do %>
-          <div class="container-favorite-box">
-            <div class="icon">
-              <i class="fa-sharp fa-solid fa-heart" style="color: #ca5353;"></i>
+    <div class="accordion" id="favoriteListsAccordion">
+      <% @favorite_lists.each do |favorite_list| %>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading_<%= favorite_list.id %>">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%= favorite_list.id %>" aria-expanded="false" aria-controls="collapse_<%= favorite_list.id %>">
+              <%= favorite_list.name %>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteListModal_<%= favorite_list.id %>">
+              Supprimer la liste
+            </button>
+          </h2>
+          <div id="collapse_<%= favorite_list.id %>" class="accordion-collapse collapse" aria-labelledby="heading_<%= favorite_list.id %>" data-bs-parent="#favoriteListsAccordion">
+            <div class="accordion-body">
+              <div class="row">
+                <% favorite_list.favorites.each do |favorite| %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= link_to favorite.scene.title, scene_path(favorite.scene) %>
+                  <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#deleteFavoriteModal_<%= favorite.id %>">
+                    Supprimer
+                  </button>
+                </h5>
+                <p class="card-text text-muted"><%= favorite.scene.movie.title %></p>
+              </div>
             </div>
-            <div class="content">
-              <h3><%= favorite_list.name %></h3>
-              <p>Nombre de favoris: <%= favorite_list.favorites.count %></p>
+
+
+                    <div class="modal fade" id="deleteFavoriteModal_<%= favorite.id %>" tabindex="-1" aria-labelledby="deleteFavoriteModalLabel_<%= favorite.id %>" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="deleteFavoriteModalLabel_<%= favorite.id %>">Supprimer le favori</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer le favori "<%= favorite.scene.title %>" de la liste "<%= favorite_list.name %>"?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <%= link_to "Supprimer", favorite_path(favorite), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
-        <% end %>
+        </div>
 
-        <%= button_to "Supprimer", favorite_list_path(favorite_list), method: :delete, data: { confirm: 'Vous êtes sûr ?' }, class: 'btn btn-danger btn-sm mt-2' %>
-      </div>
-    <% end %>
+        <div class="modal fade" id="deleteListModal_<%= favorite_list.id %>" tabindex="-1" aria-labelledby="deleteListModalLabel_<%= favorite_list.id %>" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteListModalLabel_<%= favorite_list.id %>">Supprimer la liste</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir supprimer la liste "<%= favorite_list.name %>"?</p>
+              </div>
+              <div class="modal-footer">
+                <%= link_to "Supprimer", favorite_list_path(favorite_list), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class="text-center mt-5">
+      <h2>Vous n'avez pas encore de listes de favoris.</h2>
+      <%= image_tag("yoda.png", alt: "yoda feed", width: "200px", height: "150px", class: "mt-3" ) %>
+    </div>
+  <% end %>
+
+  <div class="text-center mt-3">
+    <%= link_to 'Créer une nouvelle liste de favoris', new_favorite_list_path, class: 'btn btn-primary' %>
   </div>
-<% else %>
-  <p>Vous n'avez pas encore de listes de favoris.</p>
-<% end %>
-
-<%= link_to 'Créer une nouvelle liste de favoris', new_favorite_list_path, class: 'btn btn-primary mt-3' %>
+</div>

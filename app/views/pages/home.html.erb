@@ -1,8 +1,16 @@
 <div class="home" data-controller="aos">
-      <div class="home-banner">
-        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="center-center"><%= image_tag("cinehunt.png", class: "logo") %></div>
-        <div data-aos="fade-right" data-aos-duration="1500"><h3>Voyage sur tes lieux <br>de tournages favoris</h3></div>
-        <div data-aos="fade-left" data-aos-duration="1500"><h4>Découvre l’emplacement<br> de tes scènes préférées</h4></div>
+      <div class="home-banner toto">
+      <h2>
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="center-center"><span><%= image_tag("cinehunt.png", class: "logo") %></span></div>
+        <div data-aos="fade-left" data-aos-duration="1500"><h4>
+        <span>Découvre </span>
+        <span>l’emplacement</span>
+        <br>
+        <span>de </span>
+        <span>tes </span>
+        <span>scènes </span>
+        <span>préférées</span></h4></div>
+      </h2>
       </div>
   <% if user_signed_in? %>
   <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>

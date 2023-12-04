@@ -12,14 +12,14 @@
               <span class="fa-solid fa-star" style="color: #353b45;"></span>
               <span class="fa-regular fa-star"></span>
           </div>
-            <h5>Avis sur la scene:</h5>
+            <h5 class="card-review">Avis sur la scene:</h5>
           </div>
               <% @scene.reviews.each do |review| %>
-
-                <p><%= review.user.username %></p>
-
-                <p><%= review.content %></p>
-                <p><%= review.rating%>/5</p>
+                <div class="card-review">
+                  <p><%= review.user.username %></p>
+                  <p><%= review.content %></p>
+                  <p><%= review.rating.to_i%>/5</p>
+                </div>
               <% end %>
 
     <%= simple_form_for [@scene, @review] do |f| %>

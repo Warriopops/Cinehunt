@@ -1,10 +1,14 @@
 <div class="container">
   <div class="scene-container">
+  <div data-aos="fade-left" data-aos-duration="1000">
     <h1>Scenes</h1>
   </div>
-  <ul class="cards-scene">
+  </div>
+  <ul class="cards-scene" data-controller="aos">
     <% @scenes.each do |scene| %>
+    <div data-aos="flip-up" data-aos-duration="1000">
       <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene } %></li>
+    </div>
     <% end %>
   </ul>
 

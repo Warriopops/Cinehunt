@@ -6,25 +6,27 @@
       </div>
   <% if user_signed_in? %>
   <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>
-  <div data-aos="flip-up">
-    <div id="carouselExample" class="carousel slide favorite">
-      <div class="carousel-inner">
-        <div class="carousel-item active" id="carousel-1">
+  <% if current_user.favorites.present? %>
+  <div id="carouselExample" class="carousel slide favorite">
+    <div class="carousel-inner">
+      <% current_user.favorites.each_with_index do |favorite, index| %>
+        <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+          <%= render "shared/card_scene", scene: favorite.scene %>
         </div>
-        <div class="carousel-item" id="carousel-2">
-        </div>
-        <div class="carousel-item" id="carousel-3">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <% end %>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <% else %>
+  <p>Aucun film favori disponible</p>
+<% end %>
     </div>
     <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Tendances actuelles</h5></div>
       <div data-aos="flip-up">

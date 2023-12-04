@@ -12,12 +12,13 @@ Rails.application.routes.draw do
   resources :scenes do
     resources :favorites, only: [:create]
     resources :reviews, only: [:create]
-
   end
+
   resources :favorite_lists do
     resources :scenes, only: [:create]
     resources :favorites, only: [:create]
   end
+
   resources :users, only: [:show]
 
   namespace :my do

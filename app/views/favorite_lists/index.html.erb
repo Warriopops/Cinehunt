@@ -17,19 +17,18 @@
             <div class="accordion-body">
               <div class="row">
                 <% favorite_list.favorites.each do |favorite| %>
-  <div class="col-md-4 mb-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= link_to favorite.scene.title, scene_path(favorite.scene) %>
-          <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#deleteFavoriteModal_<%= favorite.id %>">
-            Supprimer
-          </button>
-        </h5>
-        <p class="card-text text-muted"><%= favorite.scene.movie.title %></p>
-      </div>
-    </div>
-
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= link_to favorite.scene.title, scene_path(favorite.scene) %>
+                  <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#deleteFavoriteModal_<%= favorite.id %>">
+                    Supprimer
+                  </button>
+                </h5>
+                <p class="card-text text-muted"><%= favorite.scene.movie.title %></p>
+              </div>
+            </div>
 
 
                     <div class="modal fade" id="deleteFavoriteModal_<%= favorite.id %>" tabindex="-1" aria-labelledby="deleteFavoriteModalLabel_<%= favorite.id %>" aria-hidden="true">
@@ -43,7 +42,7 @@
                             <p>Êtes-vous sûr de vouloir supprimer le favori "<%= favorite.scene.title %>" de la liste "<%= favorite_list.name %>"?</p>
                           </div>
                           <div class="modal-footer">
-                            <%= button_to "Supprimer", favorite_path(favorite), method: :delete, data: { confirm: 'Vous êtes sûr ?' }, class: 'btn btn-danger' %>
+                            <%= link_to "Supprimer", favorite_path(favorite), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                           </div>
                         </div>
@@ -67,7 +66,7 @@
                 <p>Êtes-vous sûr de vouloir supprimer la liste "<%= favorite_list.name %>"?</p>
               </div>
               <div class="modal-footer">
-                <%= button_to "Supprimer", favorite_list_path(favorite_list), method: :delete, data: { confirm: 'Vous êtes sûr ?' }, class: 'btn btn-danger' %>
+                <%= link_to "Supprimer", favorite_list_path(favorite_list), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               </div>
             </div>

@@ -12,7 +12,6 @@ class ScenesController < ApplicationController
       SQL
     @scenes = @scenes.joins(:movie, :place).where(sql_subquery, query: "%#{params[:query]}%")
     end
-    # The `geocoded` scope filters only scenes with coordinates
     @places = Place.all
     @markers = @places.geocoded.map do |place|
       {
@@ -35,7 +34,6 @@ class ScenesController < ApplicationController
   def create
     @scene = Scene.new(scene_params)
     @scene.user_id = current_user.id
-    raise
     @scene.movie = Movie.find(params[:movie_id])
     if @scene.save
       redirect_to root_path, notice: "Good job !"

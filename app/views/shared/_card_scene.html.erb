@@ -1,20 +1,27 @@
 
-  <div class="white_frame">
-    <div class="box">
 
-    <div class="card" style="background-image: url('<%= cl_image_path scene.photo.key, width: 355, height: 200, crop: :fill %>')">
+<div class="card-trip">
 
-      <div class="card-img-overlay">
-                <h3 class="card-text" ><%= link_to scene.title, scene_path(scene)%>,<%= scene.movie.title %></h3>
-
-                  <% if current_user.favorite_scenes.where(id: scene.id).first.nil? %>
-                  <%= render "scenes/modal", favorite: @favorite, scene: @scene %>
-                  <% else %>
-                    <i class="fa-solid fa-heart fa-2xl" style="color: #ffffff;"></i>
-                  <% end %>
-                <h3 class="card-text_right"><%= scene.place.country %>, <%= scene.place.city %></h3>
-
-             </div>
-      </div>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= scene.title %></h2>
+      <p><%= scene.movie.title %></p>
+    </div>
+    <div class="card-trip-pricing">
+      <% if current_user.favorite_scenes.where(id: scene.id).first.nil? %>
+      <%= render "scenes/modal", favorite: @favorite, scene: @scene %>
+      <% else %>
+        <i class="fa-solid fa-heart fa-xl" style="color: #0F2C59;"></i>
+      <% end %>
     </div>
   </div>
+
+  <%= link_to cl_image_tag(scene.photo.key, width: 368, height: 200, crop: :fill), scene_path(scene) %>
+  <div class="card-trip-infos-right">
+    <div>
+      <h2><%= scene.place.city %></h2>
+      <p><%= scene.place.country %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= scene.rating.to_i %>/5</h2>
+  </div>
+</div>

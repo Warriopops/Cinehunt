@@ -14,3 +14,11 @@
   padding-top:30px;
   padding-bottom:20px;
 }
+
+.card-review{
+    box-sizing: border-box; /* Inclut la bordure et le remplissage dans la largeur totale */
+    border-bottom: 1px solid black; /* Bordure inférieure */
+    width: 80%; /* Largeur totale de la div */
+    padding: 10px; /* Remplissage intérieur (à ajuster selon vos besoins) */
+    margin: 0 auto;
+}

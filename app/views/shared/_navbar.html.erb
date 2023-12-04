@@ -22,16 +22,16 @@
               </div>
               <i data-toggle-target="togglableElement2" data-action="click->toggle#fire" class="fa-solid fa-magnifying-glass fa-lg icon"></i>
               <i data-toggle-target="togglableElement3" data-action="click->toggle#fire" class="fa-solid fa-circle-xmark fa-lg d-none icon"></i>
-              <%= link_to '<i class="fa-solid fa-heart fa-lg icon"></i>'.html_safe, user_path(current_user) %>
+              <%= link_to '<i class="fa-solid fa-heart fa-lg icon"></i>'.html_safe, favorite_lists_path %>
               <li class="nav-item dropdown">
                 <div id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= image_tag "pdp.png", :class => "avatar dropdown-toggle" %>
                 </div>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  
+
                   <%= link_to "Ma liste", favorite_lists_path , class: "dropdown-item" %>
                   <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
-                  
+
 
                   <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
                 </div>

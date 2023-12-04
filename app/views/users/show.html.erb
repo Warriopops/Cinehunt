@@ -14,32 +14,38 @@
       <h1><strong>MES TOURNAGES</strong></h1>
       <div class="user-profile">
       <h2 class="image_centre user-greeting">Bonjour <%= @user.username %></h2>
-      <p>Niveau : <%= @user.level %></p>
+
 
      <% if @user.certified? %>
     <i class="fa-solid fa-certificate certif-button"></i>
      <% end %>
-     <div class="space-between-sections" style="margin-bottom: 30px;"></div>
-
-    <h2>Vos favoris</h2>
-    <div id="carouselExample" class="carousel slide favorite">
-      <div class="carousel-inner">
-        <div class="carousel-item active" id="carousel-1">
+<div class="space-between-sections" style="margin-bottom: 30px;"></div>
+<% if current_user.favorites.present? %>
+  <h2>Vos favoris</h2>
+  <div id="carouselExample" class="carousel slide favorite">
+    <div class="carousel-inner">
+      <% current_user.favorites.each_with_index do |favorite, index| %>
+        <div class="carousel-item <%= index.zero? ? 'active' : '' %>" id="carousel-<%= index + 1 %>">
+          <%= render "shared/card_scene", scene: favorite.scene %>
         </div>
-        <div class="carousel-item" id="carousel-2">
-        </div>
-        <div class="carousel-item" id="carousel-3">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <% end %>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<% else %>
+  <p>Aucun film favori disponible</p>
+<% end %>
+
+
+
+
     <div class="space-between-sections" style="margin-bottom: 30px;"></div>
     <h3>Vos listes</h3>
     <div class="myfavlist">

@@ -29,6 +29,11 @@ class FavoriteListsController < ApplicationController
     redirect_to favorite_lists_path
   end
 
+  def get_last_favorite_movies
+    @last_three_favorite_movies = user.get_last_favorite_movies
+    @last_three_favorite_movies ||= []
+  end
+
   private
 
   def favorite_list_params

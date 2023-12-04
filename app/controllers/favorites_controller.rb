@@ -5,9 +5,11 @@ class FavoritesController < ApplicationController
     if @favorite.save
       redirect_to scenes_path
     else
-      puts  @favorite.errors.full_messages
+      puts @favorite.errors.full_messages
     end
   end
+
+
 
   def destroy
   @favorite_list = FavoriteList.find(params[:id])

@@ -1,0 +1,7 @@
+<% place.scenes.each do |scene| %>
+
+<h2><%= scene.title %></h2>
+<p><%= scene.place.city %></p>
+<p><%= scene.photo %></p>
+<%# <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene } %>
+<% end %>

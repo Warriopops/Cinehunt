@@ -2,8 +2,7 @@
   <div class="white_frame">
     <div class="box">
       <div class="card">
-          <%= cl_image_tag(scene.photo.key, width: 355, height: 200, crop: :fill)%>
-
+          <%=cl_image_tag(scene.photo.key, width: 355, height: 200, crop: :fill)%>
             <div class="card-img-overlay">
                 <h3 class="card-text" ><%= scene.title %>,<%= scene.movie.title %></h3>
               <%= link_to scene_path(scene), class: "overlink" do  %>
@@ -18,4 +17,3 @@
       </div>
     </div>
   </div>
-

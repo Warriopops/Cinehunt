@@ -20,12 +20,12 @@
     <i class="fa-solid fa-certificate certif-button"></i>
      <% end %>
 <div class="space-between-sections" style="margin-bottom: 30px;"></div>
+<h2>Vos favoris</h2>
 <% if current_user.favorites.present? %>
-  <h2>Vos favoris</h2>
   <div id="carouselExample" class="carousel slide favorite">
     <div class="carousel-inner">
       <% current_user.favorites.each_with_index do |favorite, index| %>
-        <div class="carousel-item <%= index.zero? ? 'active' : '' %>" id="carousel-<%= index + 1 %>">
+        <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
           <%= render "shared/card_scene", scene: favorite.scene %>
         </div>
       <% end %>
@@ -42,6 +42,7 @@
 <% else %>
   <p>Aucun film favori disponible</p>
 <% end %>
+
 
 
 

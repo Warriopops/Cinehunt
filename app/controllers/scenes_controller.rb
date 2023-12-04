@@ -17,7 +17,8 @@ class ScenesController < ApplicationController
     @markers = @places.geocoded.map do |place|
       {
         latitude: place.latitude,
-        longitude: place.longitude
+        longitude: place.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {place: place})
       }
     end
 

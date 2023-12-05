@@ -19,7 +19,7 @@
     <div class="carousel-inner">
       <% current_user.favorites.each_with_index do |favorite, index| %>
         <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
-          <%= render "shared/card_scene", scene: favorite.scene %>
+          <%= link_to cl_image_tag(favorite.scene.photo.key, width: 390, height: 200, crop: :fill), scene_path(favorite.scene) %>
         </div>
       <% end %>
     </div>
@@ -32,8 +32,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <% else %>
-  <p>Aucun film favori disponible</p>
 <% end %>
     </div>
     <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Tendances actuelles</h5></div>

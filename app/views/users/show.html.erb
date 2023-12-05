@@ -11,14 +11,17 @@
           <i class="fa-solid fa-user-pen fa-2xl edit-button"></i>
         <% end %>
       </div>
-      <h1><strong>Mon espace</strong></h1>
+     <%= image_tag('mon-espace-12-4-2023.png', size: '350x100') %>
       <div class="user-profile">
       <h2 class="image_centre user-greeting">Bonjour <%= @user.username %></h2>
 
 
      <% if @user.certified? %>
     <img src="https://static-00.iconduck.com/assets.00/jedi-icon-512x482-nhj02gqp.png" alt="Certified" class="certif-image" style="width: 70px; height: auto;">
+    <% else %>
+    <img src="https://freepngimg.com/thumb/star_wars/98628-baby-yoda-png-image-high-quality.png" style="width: 100px; height: auto;">
      <% end %>
+     <%= render partial: "scenes/level"%>
 <div class="space-between-sections" style="margin-bottom: 30px;"></div>
 <h2>Vos favoris</h2>
 <% if current_user.favorites.present? %>
@@ -26,7 +29,7 @@
     <div class="carousel-inner">
       <% current_user.favorites.each_with_index do |favorite, index| %>
         <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
-          <%= render "shared/card_scene", scene: favorite.scene %>
+          <%= render "shared/index", scene: favorite.scene %>
         </div>
       <% end %>
     </div>
@@ -43,21 +46,13 @@
   <p>Aucun film favori disponible</p>
 <% end %>
 
-
-
-
-
     <div class="space-between-sections" style="margin-bottom: 30px;"></div>
     <h3>Vos listes</h3>
-    <div class="myfavlist">
-    <i class="fa-solid fa-heart heart"></i>
-    <p class="titre"> Mes endroits favoris </p>
    </div>
     </div>
  <%= link_to(favorite_lists_path, class: "btn") do %>
   Mes listes favorites
    <% end %>
-
 
     <%= link_to(new_favorite_list_path, class: "btn") do %>
   Créer une nouvelle liste

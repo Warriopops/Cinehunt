@@ -11,16 +11,23 @@
           <i class="fa-solid fa-user-pen fa-2xl edit-button"></i>
         <% end %>
       </div>
-      <h1><strong>MES TOURNAGES</strong></h1>
+     <%= image_tag('mon-espace-12-4-2023.png', size: '350x100') %>
       <div class="user-profile">
       <h2 class="image_centre user-greeting">Bonjour <%= @user.username %></h2>
 
 
      <% if @user.certified? %>
-    <i class="fa-solid fa-certificate certif-button"></i>
+      <div class="space-between-sections" style="margin-bottom: 30px;"></div>
+    <img src="https://static-00.iconduck.com/assets.00/jedi-icon-512x482-nhj02gqp.png" alt="Certified" class="certif-image" style="width: 70px; height: auto;">
+    <% else %>
+    <img src="https://freepngimg.com/thumb/star_wars/98628-baby-yoda-png-image-high-quality.png" style="width: 100px; height: auto;">
      <% end %>
-<div class="space-between-sections" style="margin-bottom: 30px;"></div>
-<h2>Vos favoris</h2>
+
+
+<%= render partial: "scenes/level"%>
+
+
+<h3>Mes derniers favoris ajoutés</h3>
 <% if current_user.favorites.present? %>
   <div id="carouselExample" class="carousel slide favorite">
     <div class="carousel-inner">
@@ -39,44 +46,32 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<% else %>
-  <p>Aucun film favori disponible</p>
-<% end %>
+    <% else %>
+      <p>Aucun film favori disponible</p>
+    <% end %>
 
-
-
-
-
-    <div class="space-between-sections" style="margin-bottom: 30px;"></div>
-    <h3>Vos listes</h3>
-    <div class="myfavlist">
-    <i class="fa-solid fa-heart heart"></i>
-    <p class="titre"> Mes endroits favoris </p>
    </div>
     </div>
- <%= link_to(favorite_lists_path, class: "btn") do %>
-  Mes listes favorites
+
+
+<%= link_to(favorite_lists_path, class: "btn") do %>
+  Listes de favoris
    <% end %>
-
-
     <%= link_to(new_favorite_list_path, class: "btn") do %>
   Créer une nouvelle liste
    <% end %>
      <div class="space-between-sections" style="margin-bottom: 50px;"></div>
   </div>
   </div>
-</div>
 
-<%= link_to(new_scene_path, class: "btn") do %>
-  Créer une nouvelle scene
-   <% end %>
+  <h3 class="text-center"> Mes scènes ajoutées</h3>
      <div class="space-between-sections" style="margin-bottom: 50px;"></div>
   </div>
   </div>
 </div>
 
 
-
+<%= link_to new_scene_path do %>
 <div class="card-trip">
 <%# <%= link_to new_scene_path do %>
   <div class="card-trip-infos">
@@ -85,21 +80,14 @@
       <p>Si Jedi tu es</p>
     </div>
     <div class="card-trip-pricing">
-        <%= link_to new_scene_path do %>
-        <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
-        <% end %>
-    </div>
-  </div>
 
- <img src="https://static.hitek.fr/img/up_m/315460810/capturedcran20230610180635.webp" />
-  <div class="card-trip-infos-right">
-    <div>
-      <h2>Je suis Gandalf le Blanc </h2>
-      <p>Et je reviens vers vous en ce moment décisif !</p>
+        <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+
     </div>
   </div>
   <%# <% end %>
 </div>
+<% end %>
 
 
 <% current_user.scenes.each do |scene| %>

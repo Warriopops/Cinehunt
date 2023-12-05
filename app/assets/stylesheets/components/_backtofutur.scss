@@ -2,6 +2,8 @@
   height: 50px;
   width:100px;
   animation: voiture 2s linear;
+  display:flex;
+  flex-direction: row;
 }
 .voiture2{
   height: 50px;
@@ -17,7 +19,7 @@
 
 @keyframes voiture {
   from {
-    margin-left: 1000px;
+    margin-left: 400px;
   }
 
   to {

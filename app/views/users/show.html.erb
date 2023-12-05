@@ -66,3 +66,42 @@
   </div>
   </div>
 </div>
+
+<%= link_to(new_scene_path, class: "btn") do %>
+  Créer une nouvelle scene
+   <% end %>
+     <div class="space-between-sections" style="margin-bottom: 50px;"></div>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="card-trip">
+<%# <%= link_to new_scene_path do %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>AJOUTER UNE SCENE</h2>
+      <p>Si Jedi tu es</p>
+    </div>
+    <div class="card-trip-pricing">
+        <%= link_to new_scene_path do %>
+        <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+        <% end %>
+    </div>
+  </div>
+
+ <img src="https://static.hitek.fr/img/up_m/315460810/capturedcran20230610180635.webp" />
+  <div class="card-trip-infos-right">
+    <div>
+      <h2>Je suis Gandalf le Blanc </h2>
+      <p>Et je reviens vers vous en ce moment décisif !</p>
+    </div>
+  </div>
+  <%# <% end %>
+</div>
+
+
+<% current_user.scenes.each do |scene| %>
+<%= render "shared/card_scene", scene: scene %>
+<% end %>

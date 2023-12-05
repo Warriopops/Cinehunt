@@ -21,4 +21,10 @@
 body {
   min-height: 100vh;
   font-family: 'Comfortaa', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
 }

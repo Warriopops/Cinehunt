@@ -4,6 +4,7 @@
       <%= render "shared/card_scene", scene: @scene %>
       <%= link_to "Lancer RA <i class='fa-solid fa-camera' style='color: #ffffff';></i>".html_safe, scenes_path, class: 'btn btn-primary'%>
       <%= render "shared/card_content_scene", scene: @scene %>
+      <%= render partial: "modal_map" %>
           <div class="rating-moyen content text-center">
             <h3 class="product-rating content text-center">Moyenne: 4.6/5</h3>
               <i class="fa-solid fa-star" style="color: #353b45;"></i>
@@ -27,7 +28,6 @@
         <%= f.input :content, label: 'Avis' %>
         <%= f.button :submit, class: 'btn'%>
       <% end %>
-
           </div>
       </div>
 

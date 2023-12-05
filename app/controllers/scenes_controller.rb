@@ -33,11 +33,14 @@ class ScenesController < ApplicationController
   end
 
   def create
-    @scene = Scene.new(scene_params)
+
+    @scene = Scene.new(scene_params.except(:address))
+    @place = Place.find_or_create_by!(address: scene_params[:address])
+    @scene.place = @place
     @scene.user_id = current_user.id
-    @scene.movie = Movie.find(params[:movie_id])
-    if @scene.save
-      redirect_to root_path, notice: "Good job !"
+
+    if @scene.save!
+      redirect_to user_path(current_user), notice: "Good job !"
     else
       render :new, status: :unprocessable_entity
     end
@@ -56,6 +59,7 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id)
+    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id, :address, :photo)
+    # params.require(:scene).permit(:place_attributes => [:address, :longitude, :latitude])
   end
 end

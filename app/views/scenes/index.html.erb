@@ -7,10 +7,18 @@
   <%= render partial: "modal_map" %>
   <ul class="cards-scene" data-controller="aos">
     <% @scenes.each do |scene| %>
-    <div data-aos="flip-up" data-aos-duration="1000">
+
+
+
+
+    <div data-aos-duration="1000">
+    <%# <div data-aos="flip-up" data-aos-duration="1000"> %>
       <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene } %></li>
     </div>
     <% end %>
   </ul>
-<%# <%= link_to "Map", map_path, class: 'btn-card' %>
+
+  <%= render partial: "modal_map"%>
+
+<%#= link_to "Map", map_path, class: 'btn-card' %>
 </div>

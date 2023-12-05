@@ -9,7 +9,7 @@
     </div>
     <div class="card-trip-pricing">
       <% if current_user.favorite_scenes.where(id: scene.id).first.nil? %>
-      <%= render "scenes/modal", favorite: @favorite, scene: @scene %>
+      <%= render "scenes/modal", favorite: @favorite, scene: scene %>
       <% else %>
         <i class="fa-solid fa-heart fa-xl" style="color: #0F2C59;"></i>
       <% end %>

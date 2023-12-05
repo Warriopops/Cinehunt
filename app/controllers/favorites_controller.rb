@@ -12,13 +12,15 @@ class FavoritesController < ApplicationController
 
 
   def destroy
-  @favorite_list = FavoriteList.find(params[:id])
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    # @favorite_list = FavoriteList.find(params[:id])
 
-  @favorite_list.favorites.destroy_all
+    # @favorite_list.favorites.destroy_all
 
-  @favorite_list.destroy
+    # @favorite_list.destroy
 
-  redirect_to favorite_lists_path, notice: 'La liste de favoris a été supprimée avec succès.'
+    redirect_to favorite_lists_path, notice: 'Le favori a été supprimé avec succès.'
   end
 
   private

@@ -1,0 +1,36 @@
+.voiture{
+  height: 50px;
+  width:100px;
+  animation: voiture 2s linear;
+}
+.voiture2{
+  height: 50px;
+  width:100px;
+  animation: voiture2 2s ease-in-out;
+}
+.fire{
+  margin-top: 23px;
+  height: 25px;
+  width:100px;
+  margin-left: -23px;
+}
+
+@keyframes voiture {
+  from {
+    margin-left: 1000px;
+  }
+
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes voiture2 {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: -1000px;
+  }
+}

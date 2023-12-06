@@ -1,5 +1,5 @@
 class Scene < ApplicationRecord
-  attr_reader :address
+  attr_reader :address, :city, :country
 
   belongs_to :place
   belongs_to :movie

@@ -3,6 +3,14 @@
 @import "users/show";
 @import "components/button";
 
+
+#trait_dessus
+{
+border-top: 1px solid #000;
+width : 700px;
+}
+
+
 .home-banner{
   background-image: linear-gradient(#000000b3, #00000080), url("https://res.cloudinary.com/djwoknd7s/image/upload/v1701703257/Capture_d_e%CC%81cran_2023-12-04_a%CC%80_16.19.46_pltp0o.png");
   height: 610px;
@@ -24,11 +32,10 @@
   color: white;
   text-align: center;
   align-items: center;
-  font-family: Impact, Charcoal, sans-serif;
-  font-size: 28px;
-  word-spacing: 2px;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 47px;
+  word-spacing: 4px;
   margin-left:5px;
-  opacity: 0.80;
   width:380px;
 }
 .home h4{

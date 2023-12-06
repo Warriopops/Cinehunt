@@ -19,8 +19,7 @@ class FavoritesController < ApplicationController
     # @favorite_list.favorites.destroy_all
 
     # @favorite_list.destroy
-
-    redirect_to favorite_lists_path, notice: 'Le favori a été supprimé avec succès.'
+    redirect_back(fallback_location: favorite_lists_path)
   end
 
   private

@@ -20,12 +20,12 @@ class ScenesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {place: place})
       }
     end
-
   end
 
   def show
     @review = Review.new
     @favorite = Favorite.new
+    @current_favorite = Favorite.find_by(scene: @scene)
   end
 
   def new
@@ -39,7 +39,7 @@ class ScenesController < ApplicationController
     @scene.user_id = current_user.id
 
     if @scene.save!
-      redirect_to user_path(current_user), notice: "Good job !"
+      redirect_to user_path(current_user), notice: "Scene ajoutée avec succés !"
     else
       render :new, status: :unprocessable_entity
     end
@@ -65,7 +65,7 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id, :address, :photo, :city, :country)
+    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id, :address, :photo, :city, :country, :video)
     # params.require(:scene).permit(:place_attributes => [:address, :longitude, :latitude])
   end
 end

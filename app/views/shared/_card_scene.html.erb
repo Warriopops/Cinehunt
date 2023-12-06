@@ -8,10 +8,12 @@
       <p><%= scene.movie.title %></p>
     </div>
     <div class="card-trip-pricing">
-      <% if current_user.favorite_scenes.where(id: scene.id).first.nil? %>
-      <%= render "scenes/modal", favorite: @favorite, scene: scene %>
+      <% if favorite && favorite.favorite_list.user == current_user %>
+        <%= link_to favorite_path(favorite), data: { turbo_method: :delete } do %>
+          <i class="fa-solid fa-heart fa-xl" style="color: #0F2C59;"></i>
+        <% end %>
       <% else %>
-        <i class="fa-solid fa-heart fa-xl" style="color: #0F2C59;"></i>
+      <%= render "scenes/modal", favorite: @favorite, scene: scene %>
       <% end %>
     </div>
   </div>

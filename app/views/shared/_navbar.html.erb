@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #084177;">
   <div class="container d-flex justify-content-center align-items-center">
-    <!-- Logo -->
+
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag("CINEHUNT.png", alt: "CINEHUNT feed", class: "logo img-fluid", style: "width: 150px;") %>
     <% end %>
 
-    <!-- Bouton de navigation pour les petits écrans -->
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
       <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
     </button>
 
-    <!-- Contenu de la navbar -->
+
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- Barre de recherche -->
+
       <%= form_with url: scenes_path, method: :get, class: "d-flex mb-2" do %>
         <div class="input-group">
           <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Rechercher" %>
@@ -22,7 +22,7 @@
         </div>
       <% end %>
 
-      <ul class="navbar-nav mx-auto">
+      <ul class="navbar-nav mx-auto text-center">
         <li class="nav-item">
           <%= link_to user_path(current_user), class: "nav-link text-white" do %>
               Mon profil

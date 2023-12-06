@@ -33,9 +33,8 @@ class ScenesController < ApplicationController
   end
 
   def create
-
-    @scene = Scene.new(scene_params.except(:address))
-    @place = Place.find_or_create_by!(address: scene_params[:address])
+    @scene = Scene.new(scene_params.except(:address, :city, :country))
+    @place = Place.find_or_create_by!(address: scene_params[:address], city: scene_params[:city], country: scene_params[:country])
     @scene.place = @place
     @scene.user_id = current_user.id
 
@@ -50,6 +49,8 @@ class ScenesController < ApplicationController
   end
 
   def destroy
+    @scene.destroy
+    redirect_to root_path, notice: 'scene was successfully destroyed.'
   end
 
   private
@@ -59,7 +60,7 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id, :address, :photo)
+    params.require(:scene).permit(:rating, :content, :price, :payant, :time, :link, :movie_id, :address, :photo, :city, :country)
     # params.require(:scene).permit(:place_attributes => [:address, :longitude, :latitude])
   end
 end

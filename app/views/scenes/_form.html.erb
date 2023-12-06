@@ -15,6 +15,7 @@
           <%= f.input :time, label: 'Durée de visite moyenne' %>
           <%= f.input :link, label: 'Lien vers le lieu' %>
           <%= f.input :photo, as: :file, input_html: { data: { action: "change->photo-preview#displayPreview", photo_preview_target: "photoInput"} } %>
+          <%= f.input :video, as: :file, input_html: { data: { action: "change->video-preview#displayPreview", video_preview_target: "videoInput"} } %>
           <%= f.button :submit, 'Ajouter le lieu de tournage'%>
         <% end %>
       </div>

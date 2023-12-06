@@ -15,7 +15,7 @@ class User < ApplicationRecord
   end
 
   def favorite_scenes
-    favorite_scene_ids = self.favorites.map { |favorite| favorite.scene_id}
-    Scene.where(id:favorite_scene_ids)
+    favorite_scene_ids = self.favorites.map { |favorite| favorite.scene_id }
+    Scene.where(id: favorite_scene_ids)
   end
 end

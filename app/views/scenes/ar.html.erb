@@ -1,7 +1,7 @@
 <div data-controller="ar"></div>
 <a-scene embedded arjs>
   <a-assets>
-    <video id="video" loop="true" src="https://res.cloudinary.com/djwoknd7s/video/upload/v1701854589/Binary_sunset..._from_A_New_Hope_Star_Wars_The_Digital_Movie_Collection_fwby8e.mp4" crossorigin webkit-playsinline playsinline controls></video>
+    <video id="video" loop="true" src="<%= cl_video_path(@scene.video.key) %>" crossorigin webkit-playsinline playsinline controls></video>
   </a-assets>
   <a-marker preset="hiro">
     <a-video src="#video" width="16" height="9" position="0 0 -20"></a-video>

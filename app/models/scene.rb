@@ -11,5 +11,6 @@ class Scene < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   has_one_attached :photo
+  has_one_attached :video
 
 end

@@ -13,7 +13,8 @@
 
     <div data-aos-duration="1000">
     <%# <div data-aos="flip-up" data-aos-duration="1000"> %>
-      <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene } %></li>
+      <% @current_favorite = Favorite.find_by(scene: scene) %>
+      <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene, favorite: @current_favorite } %></li>
     </div>
     <% end %>
   </ul>

@@ -18,7 +18,7 @@
               <div class="row">
                 <% favorite_list.favorites.each do |favorite| %>
                   <div class="col-md-4 mb-4">
-                    <%= render partial: "shared/card_scene", locals: { scene: favorite.scene } %>
+                    <%= render partial: "shared/card_scene", locals: { scene: favorite.scene, favorite: favorite } %>
                     <button type="button" class="btn btn-danger btn-sm float-end" data-bs-toggle="modal" data-bs-target="#deleteFavoriteModal_<%= favorite.id %>">
                       Supprimer
                     </button>

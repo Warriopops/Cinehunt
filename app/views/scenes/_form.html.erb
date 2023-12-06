@@ -7,6 +7,9 @@
           <%= f.input :title, label: 'Titre de la scene' %>
           <%= f.input :content, label: 'Description de la scene' %>
 
+
+          <%= f.input :country, as: :text, label: 'Pays' %>
+          <%= f.input :city, as: :text, label: 'Ville' %>
           <%= f.input :address, as: :text, label: 'Adresse' %>
           <%= f.input :payant, as: :boolean, label: 'Accessible gratuitement' %>
           <%= f.input :time, label: 'Durée de visite moyenne' %>

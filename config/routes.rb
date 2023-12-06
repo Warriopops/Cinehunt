@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :scenes do
     resources :favorites, only: [:create]
     resources :reviews, only: [:create]
+    get "ar", on: :member
   end
 
   resources :favorite_lists do

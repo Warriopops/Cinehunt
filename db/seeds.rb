@@ -29,16 +29,34 @@ puts "user Thomas created"
 joker = Movie.create!(title: 'Joker', category: 'Drame')
 conjuring = Movie.create!(title: 'Conjuring', category: 'Horreur')
 barbie = Movie.create!(title: 'Barbie', category: 'Comedie')
+intouchables = Movie.create!(title: 'Intouchables', category: 'Comédie dramatique')
+gameofthrones = Movie.create!(title: 'Game Of Thrones', category: 'Drame, Fantastique')
+harrypotter = Movie.create!(title: 'Harry Potter', category: 'Fantastique')
+starwars = Movie.create!(title: 'Star Wars', category: 'Fantastique')
 
 new_jersey = Place.new(country: 'USA', city: 'Newark, New Jersey', address: '54 Journal Square Plaza, Jersey City, NJ 07306, États-Unis')
 los_angeles = Place.new(country: 'USA', city: 'Los Angeles', address: '2637 Main St, Santa Monica, CA 90405, États-Unis')
 burrillville = Place.new(country: 'USA', city: 'Burillville', address: '1677 Round Top Rd, Burrillville, RI 02830, États-Unis')
 bronx = Place.new(country: 'USA', city: 'Bronx', address: 'Bronx, État de New York 10452, États-Unis')
+paris = Place.new(country: 'France', city: 'Paris 7e', address: '60 Quai des Tuileries, Paris 7e arrondissement')
+bushmills = Place.new(country: 'Royaume-uni', city: 'bushmills', address: '87 Dunluce Rd, Bushmills BT57 8UY, Royaume-Uni')
+dubrovnik = Place.new(country: 'Croatie', city: 'Dubrovnik', address: 'Dubrovačke Gradske Zidine, Ul. Ispod Minčete 9, 20000, Dubrovnik, Croatie')
+dubrovniktwo = Place.new(country: 'Croatie', city: 'Dubrovnik', address: '20000, Grad, Dubrovnik, Croatie')
+london = Place.new(country: 'Royaume-Uni', city: 'Londres', address: 'Euston Rd., London N1 9AL, Royaume-Uni')
+alnwick = Place.new(country: 'Royaume-uni', city: 'Alnwick', address: 'Alnwick, Northumberland, Angleterre, Royaume-Uni')
+caserta = Place.new(country: 'Italie', city: 'Caserta', address: 'Piazza Carlo di Borbone, 81100 Caserta CE, Italie')
 
 new_jersey.save
 los_angeles.save
 burrillville.save
 bronx.save
+paris.save
+bushmills.save
+dubrovnik.save
+dubrovniktwo.save
+london.save
+alnwick.save
+caserta.save
 
 loew_jersey = Scene.new(
   movie: joker,
@@ -96,4 +114,87 @@ venice_beach = Scene.create(
 )
 venice_beach.photo.attach(io: URI.open("https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"), filename: "venice_beach.png", content_type: "image/png")
 venice_beach.save!
+
+quai_des_tuileries = Scene.create(
+  movie: intouchables,
+  place: paris,
+  user: user1,
+  title: "Une petite course ?",
+  content: "Fauteuil roulant plus rapide sur le pont de la Seine.",
+  price: "Gratuit",
+  rating: 2
+)
+quai_des_tuileries.photo.attach(io: URI.open("https://www.lieuxtournage.fr/img/1360-Intouchables/72290-Pont-sur-la-Seine-miniature.png"), filename:"quai_tuilerie.png", content_type: "image/png")
+quai_des_tuileries.save!
+
+castle_of_pyke = Scene.create(
+  movie: gameofthrones,
+  place: bushmills,
+  user: user1,
+  title: "Le chateau de Pyke",
+  content: "Le château de Dunluce, construit au XVIe siècle par les MacQuillans, est perché sur une falaise et abandonné après l'effondrement de ses cuisines dans la mer, tuant 7 personnes. Connue pour cette tragédie, la forteresse a également été utilisée comme décor pour le château de Pyke dans Game of Thrones, représentant le Royaume des Greyjoys.",
+  price: "7€",
+  rating: 4.6
+)
+castle_of_pyke.photo.attach(io: URI.open("https://i.etsystatic.com/15674668/r/il/259645/3038410418/il_570xN.3038410418_bbpv.jpg"), filename:"castle_of_pyke.png", content_type: "image/png")
+castle_of_pyke.save!
+
+fort_de_minceta = Scene.create(
+  movie: gameofthrones,
+  place: dubrovnik,
+  user: user1,
+  title: "fort de Minčeta",
+  content: "la Tour Minčeta, a aussi été utilisée pour représenter l’extérieur de la House of the Undying (Hôtel des Nonmourants) à Qarth dans la Saison 2 (Episode 10), quand Daenerys cherche à sauver ses dragons.",
+  price: "15€",
+  rating: 4.6,
+)
+fort_de_minceta.photo.attach(io: URI.open("https://ih0.redbubble.net/image.4951460969.1772/raf,360x360,075,t,fafafa:ca443f4786.jpg"), filename:"mincetatower", content_type: "image/png")
+fort_de_minceta.save!
+
+walk_of_shame = Scene.create(
+  movie: gameofthrones,
+  place: dubrovniktwo,
+  user: user1,
+  title: "Walk of Shame",
+  content: "Plusieurs scènes emblématiques de Game of Thrones ont été tournées dans la vieille ville de Dubrovnik, dont la célèbre marche de la honte de Cersei sur les Jesuit Stairs. Pour éviter la foule, il est recommandé de visiter tôt le matin. De plus, les rues de la vieille ville ont également servi de toile de fond à la scène des dragons brûlant King's Landing dans la dernière saison.",
+  price: "Gratuit"
+)
+walk_of_shame.photo.attach(io: URI.open("https://www.gpsmycity.com/img/gd_attr/5525.jpg"), filename:"walkofshame", content_type: "image/png")
+walk_of_shame.save!
+
+quaineuftroisquart = Scene.create(
+  movie: harrypotter,
+  place: london,
+  user: user1,
+  title: "Quai 9 3/4",
+  content: "La gare de King's Cross est célèbre pour son lien avec Harry Potter. Dans l'univers de Harry Potter, les personnages prennent le train Poudlard Express depuis la plateforme 9¾, située entre les quais 9 et 10. Une installation artistique sous la forme d'un chariot enfoncé dans un mur représente la plateforme 9¾ à la gare, et c'est devenu un site emblématique pour les fans de la série.",
+  price: "Gratuit",
+  rating: 5.0
+)
+quaineuftroisquart.photo.attach(io: URI.open("https://www.poudlard.org/wp-content/uploads/sites/8/2020/03/Kings_Cross_Station_Platforms_London_-_Sept_2007.jpg"), filename:"quaineuftroisquart", content_type: "image/png")
+quaineuftroisquart.save!
+
+poudlard = Scene.create(
+  movie: harrypotter,
+  place: alnwick,
+  user: user1,
+  title: "Chateau de Poudlard",
+  content: "Harry Potter à l'école des sorciers et Harry Potter et la Chambre des secrets. Plus précisément, les extérieurs du château ont été utilisés pour les scènes de vol sur balai, notamment celles où Harry apprend à voler avec le professeur McGonagall." ,
+  price: "70€",
+  rating: 5.0
+)
+poudlard.photo.attach(io: URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alnwick_Castle_in_uk.jpg/1200px-Alnwick_Castle_in_uk.jpg"), filename:"lechateaudepoudlard", content_type: "image/png")
+poudlard.save!
+
+palaisdecaserte = Scene.create(
+  movie: starwars,
+  place: caserta,
+  user: user1,
+  title: "Le palais de Caserte",
+  content: "Le Palais Royal de Caserte a été utilisé comme lieu de tournage de deux des films de la série Star Wars. Lors de votre visite, pourrez-vous imaginer le monde dans une galaxie très lointaine que ce site a inspiré ?",
+  price: "21€",
+  rating: 4.1
+)
+palaisdecaserte.photo.attach(io: URI.open("https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/90/86.jpg"), filename:"lepalaisdecaserte", content_type: "image/png")
+palaisdecaserte.save!
 end

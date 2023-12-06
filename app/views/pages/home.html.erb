@@ -20,13 +20,13 @@
     <div id="carouselExample" class="carousel slide favorite">
       <div class="carousel-inner">
         <div class="carousel-item active" id="carousel-1">
-          <%= render "shared/card_scene", scene: @first_scene %>
+          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
         </div>
         <div class="carousel-item" id="carousel-2">
-          <%= render "shared/card_scene", scene: @second_scene %>
+          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
         </div>
         <div class="carousel-item" id="carousel-3">
-          <%= render "shared/card_scene", scene: @third_scene %>
+          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene) %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -44,13 +44,13 @@
       <div id="carouselExample1" class="carousel slide tendance">
       <div class="carousel-inner">
         <div class="carousel-item active" id="carousel-1">
-          <%= render "shared/card_scene", scene: @third_scene %>
+          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene) %>
         </div>
         <div class="carousel-item" id="carousel-2">
-          <%= render "shared/card_scene", scene: @second_scene %>
+          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
         </div>
         <div class="carousel-item" id="carousel-3">
-          <%= render "shared/card_scene", scene: @first_scene %>
+          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
@@ -68,13 +68,13 @@
       <div id="carouselExample3" class="carousel slide for-you">
       <div class="carousel-inner">
         <div class="carousel-item active" id="carousel-1">
-          <%= render "shared/card_scene", scene: @second_scene %>
+          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
         </div>
         <div class="carousel-item" id="carousel-2">
-          <%= render "shared/card_scene", scene: @first_scene %>
+          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
         </div>
         <div class="carousel-item" id="carousel-3">
-          <%= render "shared/card_scene", scene: @third_scene %>
+          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene)%>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">

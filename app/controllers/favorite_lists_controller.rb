@@ -7,7 +7,6 @@ class FavoriteListsController < ApplicationController
 
   def show
     @favorite_list = current_user.favorite_lists.find(params[:id])
-
   end
 
   def create

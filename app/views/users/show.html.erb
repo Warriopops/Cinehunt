@@ -21,7 +21,7 @@
     <div class="carousel-inner">
       <% current_user.favorites.each_with_index do |favorite, index| %>
         <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
-          <%= render "shared/card_scene", scene: favorite.scene %>
+          <%= render "shared/card_scene", scene: favorite.scene, favorite: favorite %>
         </div>
       <% end %>
     </div>
@@ -79,5 +79,6 @@
 
 
 <% current_user.scenes.each do |scene| %>
-<%= render "shared/card_scene", scene: scene %>
+  <% @current_favorite = Favorite.find_by(scene: scene) %>
+  <%= render "shared/card_scene", scene: scene, favorite: @current_favorite %>
 <% end %>

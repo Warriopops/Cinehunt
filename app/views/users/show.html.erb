@@ -13,24 +13,7 @@
       </div>
      <%= image_tag('mon-espace-12-4-2023.png', size: '350x100') %>
       <div class="user-profile">
-      <h2 class="toto image_centre user-greeting">
-        <span></span>
-        <span>Bonjour</span>
-        <span><%= @user.username %></span>
-      </h2>
-
-
-     <% if @user.certified? %>
-      <div class="space-between-sections" style="margin-bottom: 30px;"></div>
-    <%= image_tag("jedi.png", class: "yoda-modal rotating", data: { bs_toggle: "modal", bs_target: "#staticBackdrop" }) %>
-    <% else %>
-    <%= image_tag("yoda2.png", class: "yoda-modal rotating", data: { bs_toggle: "modal", bs_target: "#staticBackdrop" }) %>
-     <% end %>
-
-
-<%= render partial: "scenes/level"%>
-
-
+      <%= render partial: "scenes/level"%>
 <h3>Mes derniers favoris ajoutés</h3>
 <% if current_user.favorites.present? %>
   <div id="carouselExample" class="carousel slide favorite">

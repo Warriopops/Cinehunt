@@ -18,9 +18,9 @@
 
      <% if @user.certified? %>
       <div class="space-between-sections" style="margin-bottom: 30px;"></div>
-    <img src="https://static-00.iconduck.com/assets.00/jedi-icon-512x482-nhj02gqp.png" alt="Certified" class="certif-image" style="width: 70px; height: auto;">
+    <%= image_tag("jedi.png", class: "yoda-modal rotating", data: { bs_toggle: "modal", bs_target: "#staticBackdrop" }) %>
     <% else %>
-    <img src="https://freepngimg.com/thumb/star_wars/98628-baby-yoda-png-image-high-quality.png" style="width: 100px; height: auto;">
+    <%= image_tag("yoda2.png", class: "yoda-modal rotating", data: { bs_toggle: "modal", bs_target: "#staticBackdrop" }) %>
      <% end %>
 
 

@@ -24,6 +24,7 @@
 
       <ul class="navbar-nav mx-auto text-center">
         <li class="nav-item">
+         <% if user_signed_in? %>
           <%= link_to user_path(current_user), class: "nav-link text-white" do %>
               Mon profil
             <% end %>
@@ -37,6 +38,13 @@
          <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-white" do %>
               Se déconnecter
             <% end %>
+             <% else %>
+             <%= link_to new_user_session_path, class: "nav-link text-white" do %>
+              Connexion
+            <% end %>
+            <% end %>
+
+          <li class="nav-item">
         </li>
       </ul>
     </div>

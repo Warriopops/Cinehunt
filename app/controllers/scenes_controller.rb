@@ -1,5 +1,5 @@
 class ScenesController < ApplicationController
-  before_action :set_scene, only: [:show]
+  before_action :set_scene, only: [:show, :ar]
   def index
     @scenes = Scene.all
     @favorite = Favorite.new
@@ -51,6 +51,11 @@ class ScenesController < ApplicationController
   def destroy
     @scene.destroy
     redirect_to root_path, notice: 'scene was successfully destroyed.'
+  end
+
+  def ar
+    @hide_navbar = true
+    @hide_footer = true
   end
 
   private

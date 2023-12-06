@@ -1,47 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0F2C59;">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #084177;">
+  <div class="container d-flex justify-content-center align-items-center">
+    <!-- Logo -->
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag("cine-hunt.png", alt: "cine-hunt feed", class: "logo img-fluid") %>
+      <%= image_tag("CINEHUNT.png", alt: "CINEHUNT feed", class: "logo img-fluid", style: "width: 150px;") %>
     <% end %>
 
-    <%= form_with url: scenes_path, method: :get, class: "d-flex ms-auto mt-1", style: "margin-top: -1px;" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control rounded-pill me-2 small", placeholder: "Rechercher" %>
-      <button class="btn btn-outline-success" type="submit" style="background-color: transparent; border: none; margin-left: -14px;">
-        <i class="fas fa-search fa-2xl" style="color: white;"></i>
-      </button>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" style="border: none" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Bouton de navigation pour les petits écrans -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
       <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
     </button>
 
+    <!-- Contenu de la navbar -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto d-flex align-items-center">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to user_path(current_user), class: "nav-link text-white" do %>
+      <!-- Barre de recherche -->
+      <%= form_with url: scenes_path, method: :get, class: "d-flex mb-2" do %>
+        <div class="input-group">
+          <%= text_field_tag :query, params[:query], class: "form-control rounded-pill", placeholder: "Rechercher" %>
+          <button class="btn btn-outline-success border-0" type="submit" style="background-color: transparent;">
+            <i class="fas fa-search fa-2xl"></i>
+          </button>
+        </div>
+      <% end %>
+
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <%= link_to user_path(current_user), class: "nav-link text-white" do %>
               Mon profil
             <% end %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to favorite_lists_path, class: "nav-link text-white" do %>
+        </li>
+        <li class="nav-item">
+         <%= link_to favorite_lists_path, class: "nav-link text-white" do %>
               Mes favoris
             <% end %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-white" do %>
+        </li>
+        <li class="nav-item">
+         <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-white" do %>
               Se déconnecter
             <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to new_user_session_path, class: "nav-link text-white" do %>
-              Connexion
-            <% end %>
-          </li>
-        <% end %>
+        </li>
       </ul>
     </div>
   </div>

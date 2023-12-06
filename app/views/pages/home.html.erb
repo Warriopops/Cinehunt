@@ -1,7 +1,26 @@
 <div class="home" data-controller="aos">
-      <div class="home-banner toto">
+      <div class="home-banner">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" id="carousel-1">
+      <div><%= image_tag("cinehunt.png", class: "logo") %></div>
+      </div>
+      <div class="carousel-item" id="carousel-2">
+        <div><%= image_tag("cinehunt1.png", class: "logo") %></div>
+      </div>
+      <div class="carousel-item" id="carousel-3">
+        <div><%= image_tag("cinehunt2.png", class: "logo") %></div>
+      </div>
+      <div class="carousel-item" id="carousel-4">
+        <div><%= image_tag("cinehunt3.png", class: "logo") %></div>
+      </div>
+      <div class="carousel-item" id="carousel-5">
+        <div><%= image_tag("cinehunt4.png", class: "logo") %></div>
+      </div>
+    </div>
+  </div>
+  <div class="toto">
       <h2>
-        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="center-center"><span><%= image_tag("cinehunt.png", class: "logo") %></span></div>
         <div data-aos="fade-left" data-aos-duration="1500"><h4>
         <span>Explorez</span>
         <span>les lieux</span>
@@ -13,6 +32,7 @@
         <span>dans l'univers</span>
         <span>magique de vos tournages préférés.</span></h4></div>
       </h2>
+      </div>
       </div>
   <% if user_signed_in? %>
   <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>

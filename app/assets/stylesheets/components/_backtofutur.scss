@@ -1,7 +1,7 @@
 .voiture{
   height: 50px;
   width:100px;
-  animation: voiture 2s linear;
+  animation: voiture 2s ease-in-out;
   display:flex;
   flex-direction: row;
 }
@@ -19,7 +19,7 @@
 
 @keyframes voiture {
   from {
-    margin-left: 400px;
+    margin-left: 500px;
   }
 
   to {
@@ -33,7 +33,7 @@
   }
 
   to {
-    margin-left: -1000px;
+    margin-left: -500px;
   }
 }
 

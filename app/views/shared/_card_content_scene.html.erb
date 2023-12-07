@@ -6,11 +6,7 @@
       </div>
       <div class="col-10">
         <div class="card-body">
-        <% if @scene.price > 0 %>
           <h5>L'accès au lieu de tournage coûte <%= @scene.price %> €</h5>
-        <% else %>
-        <h5> L'accès au lieu de tournage est libre d'accès </h5>
-        <% end %>
         <h6>Plus d'infos : <%= link_to "ICI", @scene.link %></h6>
         </div>
       </div>

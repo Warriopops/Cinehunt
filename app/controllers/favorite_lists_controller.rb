@@ -11,14 +11,18 @@ class FavoriteListsController < ApplicationController
 
   def create
     @favorite_list = current_user.favorite_lists.build(favorite_list_params)
+
     if @favorite_list.save
-      redirect_to favorite_lists_path
+      flash[:notice] = 'Liste de favoris créée avec succès.'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "Erreur lors de la création de la liste de favoris."
     end
+
+    redirect_to session.delete(:return_to) || favorite_lists_path
   end
 
   def new
+     session[:return_to] = request.referer
     @favorite_list = FavoriteList.new
   end
 

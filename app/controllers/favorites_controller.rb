@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(favorite_params)
     if @favorite.save
-      redirect_to scenes_path
+      redirect_back(fallback_location: favorite_lists_path)
     else
       puts @favorite.errors.full_messages
     end
@@ -26,5 +26,4 @@ class FavoritesController < ApplicationController
   def favorite_params
     params.require(:favorite).permit(:scene_id, :favorite_list_id)
   end
-
 end

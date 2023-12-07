@@ -1,15 +1,7 @@
 
 
-<button type="button" class="custom-btn top-fixed"  data-bs-toggle="modal" data-bs-target="#favorite<%= scene.id %>Modal">
-    <i class="fa-regular fa-heart fa-xl" style="color: #0F2C59;"></i>
-</button>
+<i class="fa-regular fa-heart fa-xl custom-btn top-fixed" data-bs-toggle="modal" data-bs-target="#favorite<%= scene.id %>Modal" style="color: #0F2C59;"></i>
 
-<input type="hidden" id="originUrl" />
-<script>
-  function setOriginUrl(button) {
-    document.getElementById('originUrl').value = window.location.href;
-  }
-</script>
 
 <div class="modal fade" id="favorite<%= scene.id %>Modal" tabindex="-1" aria-labelledby="favorite<%= scene.id %>ModalLabel" aria-hidden="true">
   <div class="modal-dialog">

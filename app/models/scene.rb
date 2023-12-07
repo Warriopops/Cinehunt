@@ -9,6 +9,7 @@ class Scene < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :places
 
   has_one_attached :photo
   has_one_attached :video

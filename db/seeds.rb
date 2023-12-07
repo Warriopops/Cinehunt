@@ -33,6 +33,7 @@ intouchables = Movie.create!(title: 'Intouchables', category: 'Comédie dramatiq
 gameofthrones = Movie.create!(title: 'Game Of Thrones', category: 'Drame, Fantastique')
 harrypotter = Movie.create!(title: 'Harry Potter', category: 'Fantastique')
 starwars = Movie.create!(title: 'Star Wars', category: 'Fantastique')
+seigneurdesanneaux = Movie.create!(title: 'Seigneur des anneaux', category: 'Fantastique')
 
 new_jersey = Place.new(country: 'USA', city: 'Newark, New Jersey', address: '54 Journal Square, Jersey City, NJ 07306')
 los_angeles = Place.new(country: 'USA', city: 'Los Angeles', address: '2637 Main St, Santa Monica, CA 90405, États-Unis')
@@ -45,6 +46,7 @@ dubrovniktwo = Place.new(country: 'Croatie', city: 'Dubrovnik', address: '20000,
 london = Place.new(country: 'Royaume-Uni', city: 'Londres', address: 'Euston Rd., London N1C 4QP, Royaume-Uni')
 alnwick = Place.new(country: 'Royaume-uni', city: 'Alnwick', address: 'Alnwick, Northumberland, Angleterre, Royaume-Uni')
 caserta = Place.new(country: 'Italie', city: 'Caserta', address: 'Piazza Carlo di Borbone, 81100 Caserta CE, Italie')
+matamata = Place.new(country: 'Nouvelle-Zélande', city: 'Matamata', address: '501 Buckland Rd, Hinuera, Matamata 3472, Nouvelle-Zélande')
 
 new_jersey.save
 los_angeles.save
@@ -57,6 +59,7 @@ dubrovniktwo.save
 london.save
 alnwick.save
 caserta.save
+matamata.save
 
 loew_jersey = Scene.new(
   movie: joker,
@@ -248,4 +251,13 @@ Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est in
 liliane = FavoriteList.create!(name: "Royaume-Uni", user: user1)
 Favorite.create!(favorite_list: liliane, scene: poudlard)
 Favorite.create!(favorite_list: liliane, scene: quaineuftroisquart)
+
+barbara = FavoriteList.create!(name: "Game of Thrones", user: user,)
+Favorite.create!(favorite_list: barbara, scene: walk_of_shame)
+Favorite.create!(favorite_list: barbara, scene: fort_de_minceta)
+Favorite.create!(favorite_list: barbara, scene: castle_of_pyke)
+
+barba = FavoriteList.create!(name: "Italie", user: user,)
+Favorite.create!(favorite_list: barba, scene: palaisdecaserte)
+
 end

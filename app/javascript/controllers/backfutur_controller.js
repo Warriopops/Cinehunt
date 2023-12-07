@@ -16,8 +16,12 @@ export default class extends Controller {
     this.voiture2Target.classList.remove("d-none");
 
     setTimeout(() => {
+
       // Utiliser l'URL précédente pour la redirection
       window.location.href = this.previousPath || '/scenes';
+
+      window.history.go(-1);
+
     }, 300);
   }
 }

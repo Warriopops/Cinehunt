@@ -220,6 +220,6 @@ Review.create!(scene: quaineuftroisquart, user: user1, content: "Y'a juste un ch
 Review.create!(scene: poudlard, user: user, content: "Mon moment préféré ? La partie de quidditch !", rating: 5)
 Review.create!(scene: poudlard, user: user1, content: "Il y a tellement de chose à voir et a faire, j'y retournerai!", rating: 5)
 Review.create!(scene: palaisdecaserte, user: user2, content: "Pour les fans nostalgiques des premiers films star wars!", rating: 4)
-Review.create!(scene: palaisdecaserte, user: user 3, content: "Cet endroit est incroyable, on a pas le temps de tout voir en une journée", rating: 5)
+Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est incroyable, on a pas le temps de tout voir en une journée", rating: 5)
 
 end

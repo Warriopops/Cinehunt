@@ -22,39 +22,17 @@
   <div class="toto">
       <h2>
         <div data-aos="fade-left" data-aos-duration="1500"><h4>
-        <span>Visitez</span>
-        <span>des décors mythiques</span>
-        <span> et plongez </span>
-        <span>dans l'univers</span>
-        <span>magique de vos tournages préférés ! </span></h4></div>
+        <span>Plongez </span>
+        <span>dans </span>
+        <span>l'univers</span>
+        <span>magique</span>
+        <span>de vos</span>
+        <span>tournages</span>
+        <span>préférés !</span></h4></div>
       </h2>
       </div>
       </div>
   <% if user_signed_in? %>
-  <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>
-  <div data-aos="flip-up">
-    <div id="carouselExample" class="carousel slide favorite">
-      <div class="carousel-inner">
-        <div class="carousel-item active" id="carousel-1">
-          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
-        </div>
-        <div class="carousel-item" id="carousel-2">
-          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
-        </div>
-        <div class="carousel-item" id="carousel-3">
-          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene) %>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    </div>
     <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Tendances actuelles</h5><h6 style="margin-top: -15px;"><i>Découvrez les destinations prisées par les cinéastes du moment. </i></h6></div>
         <div data-aos="flip-up">
       <div id="carouselExample1" class="carousel slide tendance">
@@ -98,6 +76,30 @@
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
+    <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>
+  <div data-aos="flip-up">
+    <div id="carouselExample" class="carousel slide favorite">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-1">
+          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
+        </div>
+        <div class="carousel-item" id="carousel-2">
+          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
+        </div>
+        <div class="carousel-item" id="carousel-3">
+          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene) %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

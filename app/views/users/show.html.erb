@@ -6,20 +6,22 @@
   <div class="title">
     <h2>Acceuil de voyageurs</h2>
   </div>
-  <%= link_to new_scene_path do %>
-    <div class="card-trip effect">
-      <div class="card-trip-infos">
-        <div class="title-container">
-          <div class="card-trip-pricing">
-            <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+  <% if current_user.is_a_jedi_master? %>
+    <%= link_to new_scene_path do %>
+      <div class="card-trip effect">
+        <div class="card-trip-infos">
+          <div class="title-container">
+            <div class="card-trip-pricing">
+              <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+            </div>
+            <h2>PUBLIER VOTRE SCENE</h2>
           </div>
-          <h2>PUBLIER VOTRE SCENE</h2>
-        </div>
-        <div class="card-trip-pricing">
-          <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
+          <div class="card-trip-pricing">
+            <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
     <%= link_to favorite_lists_path do %>
     <div class="card-trip effect">

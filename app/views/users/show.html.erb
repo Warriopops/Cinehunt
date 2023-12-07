@@ -1,71 +1,99 @@
 <div class="container-show-user">
-  <div class="image_centre user_show">
-    <div class="container-user-show">
-      <div class="col-md-1">
-        <%= link_to(root_path) do %>
-          <i class="fa-sharp fa-solid fa-arrow-left fa-2xl back-button"></i>
-        <% end %>
-
-    <%= image_tag('mon-espace-12-4-2023.png', size: '350x100') %>
-
-    <div class="user-profile rounded p-4 shadow bg-white">
-      <%= render partial: "scenes/level" %>
-    </div>
-
-    <h3>Mes derniers favoris ajoutés</h3>
-
-    <% if current_user.favorites.present? %>
-      <div id="carouselExample" class="carousel slide favorite">
-        <div class="carousel-inner">
-          <% current_user.favorites.each_with_index do |favorite, index| %>
-            <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
-              <%= render "shared/card_scene", scene: favorite.scene, favorite: favorite %>
-            </div>
-          <% end %>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    <% else %>
-      <p>Aucun film favori disponible</p>
-    <% end %>
-
-    <%= link_to(favorite_lists_path, class: "btn") do %>
-      Listes de favoris
-    <% end %>
-
-    <%= link_to(new_favorite_list_path, class: "btn") do %>
-      Créer une nouvelle liste
-    <% end %>
-
-    <div class="space-between-sections" style="margin-bottom: 50px;"></div>
+  <div class="title">
+    <h2>Profil</h2>
   </div>
-
-  <h3 class="text-center"> Mes scènes ajoutées</h3>
-  <div class="space-between-sections" style="margin-bottom: 50px;"></div>
-
+  <%= render partial: "scenes/level"%>
+  <div class="title">
+    <h2>Acceuil de voyageurs</h2>
+  </div>
   <%= link_to new_scene_path do %>
-    <div class="card-trip">
+    <div class="card-trip effect">
       <div class="card-trip-infos">
-        <div>
-          <h2>AJOUTER UNE SCENE</h2>
-          <p>Si Jedi tu es</p>
+        <div class="title-container">
+          <div class="card-trip-pricing">
+            <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+          </div>
+          <h2>PUBLIER VOTRE SCENE</h2>
         </div>
         <div class="card-trip-pricing">
-          <i class="fa-solid fa-plus fa-xl" style="color: #0F2C59;"></i>
+          <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
         </div>
       </div>
     </div>
   <% end %>
-
-  <% current_user.scenes.each do |scene| %>
+    <%= link_to favorite_lists_path do %>
+    <div class="card-trip effect">
+      <div class="card-trip-infos">
+        <div class="title-container">
+          <div class="card-trip-pricing">
+            <i class="fa-regular fa-heart fa-xl" style="color: #0F2C59;"></i>
+          </div>
+          <h2>MES LISTES DE FAVORIS</h2>
+        </div>
+        <div class="card-trip-pricing">
+          <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    <%= link_to root_path do %>
+    <div class="card-trip effect">
+      <div class="card-trip-infos">
+        <div class="title-container">
+          <div class="card-trip-pricing">
+            <i class="fa-solid fa-gift fa-xl" style="color: #0F2C59;"></i>
+          </div>
+          <h2>PARRAINER UN AMI</h2>
+        </div>
+        <div class="card-trip-pricing">
+          <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+      <%= link_to root_path do %>
+    <div class="card-trip effect">
+      <div class="card-trip-infos">
+        <div class="title-container">
+          <div class="card-trip-pricing">
+            <i class="fa-solid fa-book fa-xl" style="color: #0F2C59;"></i>
+          </div>
+          <h2>POLITIQUE DE CONFIDENTIALITEE</h2>
+        </div>
+        <div class="card-trip-pricing">
+          <i class="fa-solid fa-chevron-right fa-xl" style="color: #0F2C59;"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    <div class="title">
+      <h2>Mes derniers favoris</h2>
+    </div>
+    <div id="carouselExample" class="carousel slide favorite">
+      <div class="carousel-inner">
+        <% current_user.favorites.each_with_index do |favorite, index| %>
+          <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+            <%= render "shared/card_scene", scene: favorite.scene, favorite: favorite %>
+          </div>
+        <% end %>
+      </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <%# %>
+    <div class="title">
+      <h2>Mes scènes publié</h2>
+    </div>
+      <% current_user.scenes.each do |scene| %>
+      <div class="scene-create">
     <% @current_favorite = Favorite.find_by(scene: scene) %>
     <%= render "shared/card_scene", scene: scene, favorite: @current_favorite %>
+    </div>
   <% end %>
 </div>

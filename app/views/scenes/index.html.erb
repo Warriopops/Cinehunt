@@ -11,15 +11,21 @@
   <hr>
   </div>
   <%= render partial: "modal_map" %>
-  <ul class="cards-scene" data-controller="aos">
-    <% @scenes.each do |scene| %>
-    <div data-aos-duration="1000">
-    <%# <div data-aos="flip-up" data-aos-duration="1000"> %>
-      <% @current_favorite = Favorite.find_by(scene: scene) %>
-      <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene, favorite: @current_favorite } %></li>
-    </div>
-    <% end %>
-  </ul>
+  <% if @scenes.any? %>
+    <ul class="cards-scene" data-controller="aos">
+      <% @scenes.each do |scene| %>
+      <div data-aos-duration="1000">
+      <%# <div data-aos="flip-up" data-aos-duration="1000"> %>
+        <% @current_favorite = Favorite.find_by(scene: scene) %>
+        <li class="card-scene"><%= render partial: "shared/card_scene", locals: { scene: scene, favorite: @current_favorite } %></li>
+      </div>
+      <% end %>
+    </ul>
+ <% else %>
+  <div class="yoda-flex-center">
+    <%= render "shared/yoda", text: "Des résultats il n'y a pas" %>
+  </div>
+<% end %>
 
   <%= render partial: "modal_map"%>
 

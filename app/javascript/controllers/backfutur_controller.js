@@ -10,7 +10,7 @@ export default class extends Controller {
     this.voiture1Target.classList.add("d-none");
     this.voiture2Target.classList.remove("d-none");
     setTimeout(() => {
-      window.location.href = '/scenes'
+      window.history.go(-1);
     }, 300);
 
   }

@@ -17,9 +17,9 @@ Place.destroy_all
 Movie.destroy_all
 User.destroy_all
 
-user = User.create!(email: "barbara@cinehunt.fr", password: "123456", username: "Barbara le jedi", level: 30, certification: true)
+user = User.create!(email: "barbara@cinehunt.fr", password: "123456", username: "Barbara le jedi", level: 100, certification: true)
 puts "user Barbara created"
-user1 = User.create!(email: "lilian@cinehunt.fr", password: "123456", username: "Lilian le padawan", level: 1, certification: false)
+user1 = User.create!(email: "lilian@cinehunt.fr", password: "123456", username: "Lilian le padawan", level: 50, certification: false)
 puts "user Lilian created"
 user2 = User.create!(email: "hilam@cinehunt.fr", password: "123456", username: "Hilam le jedi", level: 30, certification: true)
 puts "user Hilam created"
@@ -78,7 +78,7 @@ loew_jersey.save!
 escaliers = Scene.new(
   movie: joker,
   place: bronx,
-  user: user1,
+  user: user,
   title: "Les escaliers",
   content: "Le célèbre escalier qui illustre l'affiche du film",
   time: "5 minutes",
@@ -190,7 +190,7 @@ quaineuftroisquart = Scene.create(
   title: "Quai 9 3/4",
   content: "La gare de King's Cross est célèbre pour son lien avec Harry Potter. Dans l'univers de Harry Potter, les personnages prennent le train Poudlard Express depuis la plateforme 9¾, située entre les quais 9 et 10. Une installation artistique sous la forme d'un chariot enfoncé dans un mur représente la plateforme 9¾ à la gare, et c'est devenu un site emblématique pour les fans de la série.",
   price: "Gratuit",
-  rating: 5.0,
+  rating: 3.0,
   time: "5 min",
   link: "https://visite-londres.com/quai-9-3-4-harry-potter-londres-kings-cross/"
 )
@@ -242,9 +242,9 @@ Review.create!(scene: fort_de_minceta, user: user2, content: "Il fesait trop fro
 Review.create!(scene: walk_of_shame, user: user2, content: "J'ai pu faire mon photo shooting , sauf qu'un passant a voulu s'incruster dedans", rating: 5)
 Review.create!(scene: walk_of_shame, user: user1, content: "Je suis tombé sur une dame qui fesait trop la diva, mauvaise expérience.", rating: 1)
 Review.create!(scene: quaineuftroisquart, user: user, content: "J'ai pu voir l'emplacement mythique du caddie enfoncé dans un mur!", rating: 5)
-Review.create!(scene: quaineuftroisquart, user: user1, content: "Y'a juste un chariot à voir quoi", rating: 2)
+Review.create!(scene: quaineuftroisquart, user: user3, content: "Y'a juste un chariot à voir quoi", rating: 2)
 Review.create!(scene: poudlard, user: user, content: "Mon moment préféré ? La partie de quidditch !", rating: 5)
-Review.create!(scene: poudlard, user: user1, content: "Il y a tellement de chose à voir et a faire, j'y retournerai!", rating: 5)
+Review.create!(scene: poudlard, user: user3, content: "Il y a tellement de chose à voir et a faire, j'y retournerai!", rating: 5)
 Review.create!(scene: palaisdecaserte, user: user2, content: "Pour les fans nostalgiques des premiers films star wars!", rating: 4)
 Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est incroyable, on a pas le temps de tout voir en une journée", rating: 5)
 

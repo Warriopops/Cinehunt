@@ -17,7 +17,7 @@
 
 
           <div class="rating-moyen content text-center">
-            <h3 class="product-rating content text-center">Moyenne: 4.6/5</h3>
+            <h3 class="product-rating content text-center">Moyenne: <%= @scene.rating %>/5</h3>
               <i class="fa-solid fa-star" style="color: #353b45;"></i>
               <span class="fa-solid fa-star" style="color: #353b45;"></span>
               <span class="fa-solid fa-star"></span>
@@ -26,9 +26,6 @@
           </div>
             <h4 class="card-review">Avis sur la scene</h4>
           </div>
-
-
-
 
 
               <% @scene.reviews.each do |review| %>

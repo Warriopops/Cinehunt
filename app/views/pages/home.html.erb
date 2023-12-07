@@ -82,20 +82,16 @@
     </div>
     </div>
     <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"><h5>Vos favoris</h5></div>
-  <div data-aos="flip-up">
+
     <div id="carouselExample" class="carousel slide favorite">
       <div class="carousel-inner">
-        <div class="carousel-item active" id="carousel-1">
-          <%= render "shared/card_scene", scene: @first_scene, favorite: Favorite.find_by(scene: @first_scene) %>
-        </div>
-        <div class="carousel-item" id="carousel-2">
-          <%= render "shared/card_scene", scene: @second_scene, favorite: Favorite.find_by(scene: @second_scene) %>
-        </div>
-        <div class="carousel-item" id="carousel-3">
-          <%= render "shared/card_scene", scene: @third_scene, favorite: Favorite.find_by(scene: @third_scene) %>
-        </div>
+        <% current_user.favorites.each_with_index do |favorite, index| %>
+          <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+            <%= render "shared/card_scene", scene: favorite.scene, favorite: favorite %>
+          </div>
+        <% end %>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
@@ -103,7 +99,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
     </div>
   <% else %>
 

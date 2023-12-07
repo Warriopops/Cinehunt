@@ -1,6 +1,7 @@
 class ScenesController < ApplicationController
   before_action :set_scene, only: [:show, :ar]
   def index
+    @query_param = params[:query]
     @scenes = Scene.all
     @favorite = Favorite.new
     if params[:query].present?

@@ -66,8 +66,9 @@ loew_jersey = Scene.new(
   content: "C'est ici qu'Arthur Fleck descend le tapis rouge en faisant des cabrioles",
   rating: 4.4,
   time: "1h30",
-  price: "9€"
-)
+  price: "9€",
+  link: "https://www.expedia.com/Loews-Jersey-Theater-Journal-Square.d6079889.Vacation-Attraction"
+  )
 loew_jersey.photo.attach(io: URI.open("https://jerseydigs.com/wp-content/uploads/2021/02/Loews-Jersey-Theatre-Journal-Square-Jersey-City-1.jpg"), filename: "loew_jersey.png", content_type: "image/png")
 loew_jersey.save!
 
@@ -78,9 +79,9 @@ escaliers = Scene.new(
   title: "Les escaliers",
   content: "Le célèbre escalier qui illustre l'affiche du film",
   time: "5 minutes",
-  price: 0.0
+  price: 0.0,
+  link: "https://www.cnewyork.net/cinema/les-lieux-de-tournage-du-joker-a-new-york/"
 )
-
 escaliers.photo.attach(io: URI.open("https://fr.web.img4.acsta.net/r_654_368/newsv7/19/10/24/14/31/2884301.jpg"), filename: "escaliers.png", content_type: "image/png")
 escaliers.save!
 
@@ -91,7 +92,8 @@ paramount_theater = Scene.new(
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
   price: 0.0,
-  time: "5 minutes"
+  time: "5 minutes",
+  link: "https://www.sceen-it.com/sceen/3680/Joker/Newark-Paramount-Theater-closed"
 )
 paramount_theater.photo.attach(io: URI.open("https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.nj.com/home/njo-media/width2048/img/essex_impact/photo/2018/10/12/24954100-standard.jpg"), filename: "paramount_theater.png", content_type: "image/png")
 paramount_theater.save!
@@ -104,7 +106,8 @@ conjuring = Scene.new(
   content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
   rating: 4.9,
   price: 30.0,
-  time: "2h"
+  time: "2h",
+  link: "https://www.theconjuringhouse.com/"
 )
 conjuring.photo.attach(io: URI.open("https://imageio.forbes.com/specials-images/imageserve/629003d4d07c7f069f74921f/Haunted-House--Colonial-house/960x0.jpg?format=jpg&width=960https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"), filename: "conjuring.png", content_type: "image/png")
 conjuring.save!
@@ -116,7 +119,8 @@ venice_beach = Scene.create(
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: 0.0,
-  time: "30 min"
+  time: "30 min",
+  link: "https://www.losangeles.fr/venice-beach"
 )
 venice_beach.photo.attach(io: URI.open("https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"), filename: "venice_beach.png", content_type: "image/png")
 venice_beach.save!
@@ -129,7 +133,8 @@ quai_des_tuileries = Scene.create(
   content: "Fauteuil roulant plus rapide sur le pont de la Seine.",
   price: 0.0,
   rating: 2,
-  time: "10 min"
+  time: "10 min",
+  link: "https://parisjetaime.com/transport/quai-des-tuileries-p1963"
 )
 quai_des_tuileries.photo.attach(io: URI.open("https://www.lieuxtournage.fr/img/1360-Intouchables/72290-Pont-sur-la-Seine-miniature.png"), filename:"quai_tuilerie.png", content_type: "image/png")
 quai_des_tuileries.save!
@@ -142,7 +147,8 @@ castle_of_pyke = Scene.create(
   content: "Le château de Dunluce, construit au XVIe siècle par les MacQuillans, est perché sur une falaise et abandonné après l'effondrement de ses cuisines dans la mer, tuant 7 personnes. Connue pour cette tragédie, la forteresse a également été utilisée comme décor pour le château de Pyke dans Game of Thrones, représentant le Royaume des Greyjoys.",
   price: 7.0,
   rating: 4.6,
-  time: "2h30"
+  time: "2h30",
+  link: "https://discovernorthernireland.com/things-to-do/dunluce-castle-p675011"
 )
 castle_of_pyke.photo.attach(io: URI.open("https://i.etsystatic.com/15674668/r/il/259645/3038410418/il_570xN.3038410418_bbpv.jpg"), filename:"castle_of_pyke.png", content_type: "image/png")
 castle_of_pyke.save!
@@ -155,7 +161,8 @@ fort_de_minceta = Scene.create(
   content: "la Tour Minčeta, a aussi été utilisée pour représenter l’extérieur de la House of the Undying (Hôtel des Nonmourants) à Qarth dans la Saison 2 (Episode 10), quand Daenerys cherche à sauver ses dragons.",
   price: "15€",
   rating: 4.6,
-  time: "2h"
+  time: "2h",
+  link: "https://dpds.hr/"
 )
 fort_de_minceta.photo.attach(io: URI.open("https://ih0.redbubble.net/image.4951460969.1772/raf,360x360,075,t,fafafa:ca443f4786.jpg"), filename:"mincetatower", content_type: "image/png")
 fort_de_minceta.save!
@@ -167,7 +174,8 @@ walk_of_shame = Scene.create(
   title: "Walk of Shame",
   content: "Plusieurs scènes emblématiques de Game of Thrones ont été tournées dans la vieille ville de Dubrovnik, dont la célèbre marche de la honte de Cersei sur les Jesuit Stairs. Pour éviter la foule, il est recommandé de visiter tôt le matin. De plus, les rues de la vieille ville ont également servi de toile de fond à la scène des dragons brûlant King's Landing dans la dernière saison.",
   price: "Gratuit",
-  time: "5 min"
+  time: "5 min",
+  link: "https://www.movieworldmap.com/filming-locations/cersei-lannisters-walk-of-shame/#:~:text=of%20Thrones%20Series-,Filming%20Location,several%20locations%20in%20Dubrovnik%2C%20Croatia."
 )
 walk_of_shame.photo.attach(io: URI.open("https://www.gpsmycity.com/img/gd_attr/5525.jpg"), filename:"walkofshame", content_type: "image/png")
 walk_of_shame.save!
@@ -180,7 +188,8 @@ quaineuftroisquart = Scene.create(
   content: "La gare de King's Cross est célèbre pour son lien avec Harry Potter. Dans l'univers de Harry Potter, les personnages prennent le train Poudlard Express depuis la plateforme 9¾, située entre les quais 9 et 10. Une installation artistique sous la forme d'un chariot enfoncé dans un mur représente la plateforme 9¾ à la gare, et c'est devenu un site emblématique pour les fans de la série.",
   price: "Gratuit",
   rating: 5.0,
-  time: "5 min"
+  time: "5 min",
+  link: "https://visite-londres.com/quai-9-3-4-harry-potter-londres-kings-cross/"
 )
 quaineuftroisquart.photo.attach(io: URI.open("https://www.poudlard.org/wp-content/uploads/sites/8/2020/03/Kings_Cross_Station_Platforms_London_-_Sept_2007.jpg"), filename:"quaineuftroisquart", content_type: "image/png")
 quaineuftroisquart.save!
@@ -193,7 +202,8 @@ poudlard = Scene.create(
   content: "Harry Potter à l'école des sorciers et Harry Potter et la Chambre des secrets. Plus précisément, les extérieurs du château ont été utilisés pour les scènes de vol sur balai, notamment celles où Harry apprend à voler avec le professeur McGonagall." ,
   price: "70€",
   rating: 5.0,
-  time: "4h30"
+  time: "4h30",
+  link: "https://www.alnwickcastle.com/explore/on-screen/harry-potter"
 )
 poudlard.photo.attach(io: URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alnwick_Castle_in_uk.jpg/1200px-Alnwick_Castle_in_uk.jpg"), filename:"lechateaudepoudlard", content_type: "image/png")
 poudlard.save!
@@ -206,7 +216,8 @@ palaisdecaserte = Scene.create(
   content: "Le Palais Royal de Caserte a été utilisé comme lieu de tournage de deux des films de la série Star Wars. Lors de votre visite, pourrez-vous imaginer le monde dans une galaxie très lointaine que ce site a inspiré ?",
   price: "21€",
   rating: 4.1,
-  time: "3h"
+  time: "3h",
+  link: "https://reggiadicaserta.cultura.gov.it/"
 )
 palaisdecaserte.photo.attach(io: URI.open("https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/90/86.jpg"), filename:"lepalaisdecaserte", content_type: "image/png")
 palaisdecaserte.save!

@@ -91,7 +91,7 @@ escaliers.save!
 paramount_theater = Scene.new(
   movie: joker,
   place: new_jersey,
-  user: user1,
+  user: user3,
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
   price: 0.0,
@@ -104,7 +104,7 @@ paramount_theater.save!
 conjuring = Scene.new(
   movie: conjuring,
   place: burrillville,
-  user: user1,
+  user: user3,
   title: "The Conjuring House",
   content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
   rating: 4.9,
@@ -118,7 +118,7 @@ conjuring.save!
 venice_beach = Scene.create(
   movie: barbie,
   place: los_angeles,
-  user: user1,
+  user: user3,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
   price: 0.0,
@@ -131,7 +131,7 @@ venice_beach.save!
 quai_des_tuileries = Scene.create(
   movie: intouchables,
   place: paris,
-  user: user1,
+  user: user3,
   title: "Une petite course ?",
   content: "Fauteuil roulant plus rapide sur le pont de la Seine.",
   price: 0.0,
@@ -145,7 +145,7 @@ quai_des_tuileries.save!
 castle_of_pyke = Scene.create(
   movie: gameofthrones,
   place: bushmills,
-  user: user1,
+  user: user3,
   title: "Le chateau de Pyke",
   content: "Le château de Dunluce, construit au XVIe siècle par les MacQuillans, est perché sur une falaise et abandonné après l'effondrement de ses cuisines dans la mer, tuant 7 personnes. Connue pour cette tragédie, la forteresse a également été utilisée comme décor pour le château de Pyke dans Game of Thrones, représentant le Royaume des Greyjoys.",
   price: 7.0,
@@ -159,7 +159,7 @@ castle_of_pyke.save!
 fort_de_minceta = Scene.create(
   movie: gameofthrones,
   place: dubrovnik,
-  user: user1,
+  user: user3,
   title: "fort de Minčeta",
   content: "la Tour Minčeta, a aussi été utilisée pour représenter l’extérieur de la House of the Undying (Hôtel des Nonmourants) à Qarth dans la Saison 2 (Episode 10), quand Daenerys cherche à sauver ses dragons.",
   price: "15€",
@@ -173,7 +173,7 @@ fort_de_minceta.save!
 walk_of_shame = Scene.create(
   movie: gameofthrones,
   place: dubrovniktwo,
-  user: user1,
+  user: user3,
   title: "Walk of Shame",
   content: "Plusieurs scènes emblématiques de Game of Thrones ont été tournées dans la vieille ville de Dubrovnik, dont la célèbre marche de la honte de Cersei sur les Jesuit Stairs. Pour éviter la foule, il est recommandé de visiter tôt le matin. De plus, les rues de la vieille ville ont également servi de toile de fond à la scène des dragons brûlant King's Landing dans la dernière saison.",
   price: "Gratuit",
@@ -186,7 +186,7 @@ walk_of_shame.save!
 quaineuftroisquart = Scene.create(
   movie: harrypotter,
   place: london,
-  user: user1,
+  user: user3,
   title: "Quai 9 3/4",
   content: "La gare de King's Cross est célèbre pour son lien avec Harry Potter. Dans l'univers de Harry Potter, les personnages prennent le train Poudlard Express depuis la plateforme 9¾, située entre les quais 9 et 10. Une installation artistique sous la forme d'un chariot enfoncé dans un mur représente la plateforme 9¾ à la gare, et c'est devenu un site emblématique pour les fans de la série.",
   price: "Gratuit",
@@ -200,7 +200,7 @@ quaineuftroisquart.save!
 poudlard = Scene.create(
   movie: harrypotter,
   place: alnwick,
-  user: user1,
+  user: user3,
   title: "Chateau de Poudlard",
   content: "Harry Potter à l'école des sorciers et Harry Potter et la Chambre des secrets. Plus précisément, les extérieurs du château ont été utilisés pour les scènes de vol sur balai, notamment celles où Harry apprend à voler avec le professeur McGonagall." ,
   price: "70€",
@@ -214,7 +214,7 @@ poudlard.save!
 palaisdecaserte = Scene.create(
   movie: starwars,
   place: caserta,
-  user: user1,
+  user: user3,
   title: "Le palais de Caserte",
   content: "Le Palais Royal de Caserte a été utilisé comme lieu de tournage de deux des films de la série Star Wars. Lors de votre visite, pourrez-vous imaginer le monde dans une galaxie très lointaine que ce site a inspiré ?",
   price: "21€",

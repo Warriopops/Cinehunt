@@ -39,18 +39,30 @@
   margin-left: 30px;
 }
 
-.container-show-user .titre {
+.container-show-user .title {
   color: #ffffff;
   font-size: 20px;
-  text-align: center;
-    margin-right: 10px;
-    padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  padding-top: 20px;
+  text-align: left;
 }
 
 .container-show-user .btn {
   float: left;
 }
-
+.container-show-user .card-trip{
+  margin-top: 10px;
+  width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-show-user .card-trip:hover{
+  background-color: #0F2C59;
+  .card-trip-pricing i, h2{
+    color: white !important;;
+  }
+}
 .yoda-modal{
   width: 100px;
   height: auto;
@@ -100,6 +112,7 @@
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
     color: white;
     font-size: 24px;
+
   }
 
   @keyframes scale {
@@ -194,4 +207,12 @@
   }
 
 
+}
+.container-show-user .title-container{
+  display: flex;
+  flex-direction: row;
+}
+.container-show-user .title-container h2{
+  margin-left: 14px;
+  margin-top: 2px;
 }

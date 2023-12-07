@@ -39,7 +39,7 @@ los_angeles = Place.new(country: 'USA', city: 'Los Angeles', address: '2637 Main
 burrillville = Place.new(country: 'USA', city: 'Burillville', address: '1677 Round Top Rd, Burrillville, RI 02830, États-Unis')
 bronx = Place.new(country: 'USA', city: 'Bronx', address: '1165 Shakespeare Avenue, NY 10452')
 paris = Place.new(country: 'France', city: 'Paris 7e', address: '60 Quai des Tuileries, 75001 Paris')
-bushmills = Place.new(country: 'Royaume-uni', city: 'bushmills', address: '87 Dunluce Rd, Bushmills BT57 8UY, Irlanda del Norte')
+bushmills = Place.new(country: 'Royaume-uni', city: 'Bushmills', address: '87 Dunluce Rd, Bushmills BT57 8UY, Irlanda del Norte')
 dubrovnik = Place.new(country: 'Croatie', city: 'Dubrovnik', address: 'Tvrđava Minčeta, Dubrovačke Gradske Zidine, Ul. Ispod Minčete 9, 20000, Dubrovnik, Croatie')
 dubrovniktwo = Place.new(country: 'Croatie', city: 'Dubrovnik', address: '20000, Grad, Dubrovnik, Croatie')
 london = Place.new(country: 'Royaume-Uni', city: 'Londres', address: 'Euston Rd., London N1C 4QP, Royaume-Uni')
@@ -245,4 +245,7 @@ Review.create!(scene: poudlard, user: user1, content: "Il y a tellement de chose
 Review.create!(scene: palaisdecaserte, user: user2, content: "Pour les fans nostalgiques des premiers films star wars!", rating: 4)
 Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est incroyable, on a pas le temps de tout voir en une journée", rating: 5)
 
+liliane = FavoriteList.create!(name: "Royaume-Uni", user: user1)
+Favorite.create!(favorite_list: liliane, scene: poudlard)
+Favorite.create!(favorite_list: liliane, scene: quaineuftroisquart)
 end

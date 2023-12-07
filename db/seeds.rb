@@ -248,4 +248,13 @@ Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est in
 liliane = FavoriteList.create!(name: "Royaume-Uni", user: user1)
 Favorite.create!(favorite_list: liliane, scene: poudlard)
 Favorite.create!(favorite_list: liliane, scene: quaineuftroisquart)
+
+barbara = FavoriteList.create!(name: "Game of Thrones", user: user,)
+Favorite.create!(favorite_list: barbara, scene: walk_of_shame)
+Favorite.create!(favorite_list: barbara, scene: fort_de_minceta)
+Favorite.create!(favorite_list: barbara, scene: castle_of_pyke)
+
+barba = FavoriteList.create!(name: "Italie", user: user,)
+Favorite.create!(favorite_list: barba, scene: palaisdecaserte)
+
 end

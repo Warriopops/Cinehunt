@@ -76,8 +76,9 @@ escaliers = Scene.new(
   user: user1,
   title: "Les escaliers",
   content: "Le célèbre escalier qui illustre l'affiche du film",
-  price: "Gratuit"
+  price: 0.0
 )
+
 escaliers.photo.attach(io: URI.open("https://fr.web.img4.acsta.net/r_654_368/newsv7/19/10/24/14/31/2884301.jpg"), filename: "escaliers.png", content_type: "image/png")
 escaliers.save!
 
@@ -87,7 +88,7 @@ paramount_theater = Scene.new(
   user: user1,
   title: "The Paramount Theater",
   content: "C'est ici qu'Arthur Fleck a été dupé par des adolescents alors qu'il travaillait en tant que clown devant le Newark Paramount Theater.",
-  price: "Gratuit"
+  price: 0.0
 )
 paramount_theater.photo.attach(io: URI.open("https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.nj.com/home/njo-media/width2048/img/essex_impact/photo/2018/10/12/24954100-standard.jpg"), filename: "paramount_theater.png", content_type: "image/png")
 paramount_theater.save!
@@ -99,7 +100,7 @@ conjuring = Scene.new(
   title: "The Conjuring House",
   content: "La célèbre maison de Ed et Lorren Warren qui ont inspiré le célèbre film Conjuring.",
   rating: 4.9,
-  price: "25-30€"
+  price: 30.0
 )
 conjuring.photo.attach(io: URI.open("https://imageio.forbes.com/specials-images/imageserve/629003d4d07c7f069f74921f/Haunted-House--Colonial-house/960x0.jpg?format=jpg&width=960https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"), filename: "conjuring.png", content_type: "image/png")
 conjuring.save!
@@ -110,7 +111,7 @@ venice_beach = Scene.create(
   user: user1,
   title: "Venice Beach",
   content: "Barbie à Venice Beach, un lieu dynamique qui reflète la diversité culturelle du monde réel.",
-  price: "Gratuit"
+  price: 0.0
 )
 venice_beach.photo.attach(io: URI.open("https://i.dailymail.co.uk/1s/2022/06/28/05/59606005-10959397-image-a-73_1656392097884.jpg"), filename: "venice_beach.png", content_type: "image/png")
 venice_beach.save!
@@ -121,7 +122,7 @@ quai_des_tuileries = Scene.create(
   user: user1,
   title: "Une petite course ?",
   content: "Fauteuil roulant plus rapide sur le pont de la Seine.",
-  price: "Gratuit",
+  price: 0.0,
   rating: 2
 )
 quai_des_tuileries.photo.attach(io: URI.open("https://www.lieuxtournage.fr/img/1360-Intouchables/72290-Pont-sur-la-Seine-miniature.png"), filename:"quai_tuilerie.png", content_type: "image/png")
@@ -133,7 +134,7 @@ castle_of_pyke = Scene.create(
   user: user1,
   title: "Le chateau de Pyke",
   content: "Le château de Dunluce, construit au XVIe siècle par les MacQuillans, est perché sur une falaise et abandonné après l'effondrement de ses cuisines dans la mer, tuant 7 personnes. Connue pour cette tragédie, la forteresse a également été utilisée comme décor pour le château de Pyke dans Game of Thrones, représentant le Royaume des Greyjoys.",
-  price: "7€",
+  price: 7.0,
   rating: 4.6
 )
 castle_of_pyke.photo.attach(io: URI.open("https://i.etsystatic.com/15674668/r/il/259645/3038410418/il_570xN.3038410418_bbpv.jpg"), filename:"castle_of_pyke.png", content_type: "image/png")
@@ -197,4 +198,28 @@ palaisdecaserte = Scene.create(
 )
 palaisdecaserte.photo.attach(io: URI.open("https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/90/86.jpg"), filename:"lepalaisdecaserte", content_type: "image/png")
 palaisdecaserte.save!
+
+Review.create!(scene: escaliers, user: user, content: "Beaucoup de gens déguisés en joker en train de faire des shoots.", rating: 5)
+Review.create!(scene: escaliers, user: user2, content: "Beaucoup de monde, mais c'est sympa", rating: 4)
+Review.create!(scene: loew_jersey, user: user3, content: "J'ai fais une visite guidé, c'était cool.", rating: 4)
+Review.create!(scene: loew_jersey, user: user, content: "J'ai beaucoup aimé ce lieu, j'ai fais tout plein de photos!", rating: 5)
+Review.create!(scene: conjuring, user: user2, content: "Un fantôme est apparu pendant la visite, on a discuté avec lui", rating: 5)
+Review.create!(scene: conjuring, user: user3, content: "Des evènement paranormaux se sont produit pendant la visite, frissons garantis!", rating: 4)
+Review.create!(scene: paramount_theater, user: user3, content: "On peut pas y entrer.", rating: 3)
+Review.create!(scene: paramount_theater, user: user, content: "Etant street photographer j'ai bien aimé", rating: 5)
+Review.create!(scene: venice_beach, user: user2, content: "Je me suis sentie dans mon univers", rating: 5)
+Review.create!(scene: venice_beach, user: user, content: "Ca m'a bien plus", rating: 4)
+Review.create!(scene: castle_of_pyke, user: user3, content: "Paysage époustouflant", rating: 5)
+Review.create!(scene: castle_of_pyke, user: user1, content: "Ce lieu est magique", rating: 5)
+Review.create!(scene: fort_de_minceta, user: user3, content: "Ce lieu renferme tout une histoire", rating: 5)
+Review.create!(scene: fort_de_minceta, user: user2, content: "Il fesait trop froid", rating: 3)
+Review.create!(scene: walk_of_shame, user: user2, content: "J'ai pu faire mon photo shooting , sauf qu'un passant a voulu s'incruster dedans", rating: 5)
+Review.create!(scene: walk_of_shame, user: user1, content: "Je suis tombé sur une dame qui fesait trop la diva, mauvaise expérience.", rating: 1)
+Review.create!(scene: quaineuftroisquart, user: user, content: "J'ai pu voir l'emplacement mythique du caddie enfoncé dans un mur!", rating: 5)
+Review.create!(scene: quaineuftroisquart, user: user1, content: "Y'a juste un chariot à voir quoi", rating: 2)
+Review.create!(scene: poudlard, user: user, content: "Mon moment préféré ? La partie de quidditch !", rating: 5)
+Review.create!(scene: poudlard, user: user1, content: "Il y a tellement de chose à voir et a faire, j'y retournerai!", rating: 5)
+Review.create!(scene: palaisdecaserte, user: user2, content: "Pour les fans nostalgiques des premiers films star wars!", rating: 4)
+Review.create!(scene: palaisdecaserte, user: user3, content: "Cet endroit est incroyable, on a pas le temps de tout voir en une journée", rating: 5)
+
 end

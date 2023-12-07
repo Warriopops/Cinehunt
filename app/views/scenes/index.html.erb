@@ -2,17 +2,17 @@
   <div class="scene-container d-flex align-items-center justify-content-center">
   <hr>
   <div data-aos="fade-left" data-aos-duration="1000">
-    <h1>Scènes</h1>
+    <% if @query_param %>
+      <h1>Votre recherche : <%= @query_param %></h1>
+    <% else %>
+      <h1>Vous n'avez pas de recherches</h1>
+    <% end %>
   </div>
   <hr>
   </div>
   <%= render partial: "modal_map" %>
   <ul class="cards-scene" data-controller="aos">
     <% @scenes.each do |scene| %>
-
-
-
-
     <div data-aos-duration="1000">
     <%# <div data-aos="flip-up" data-aos-duration="1000"> %>
       <% @current_favorite = Favorite.find_by(scene: scene) %>

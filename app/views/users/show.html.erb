@@ -6,7 +6,7 @@
   <div class="title">
     <h2>Acceuil de voyageurs</h2>
   </div>
-  <% if current_user.is_a_jedi_master? %>
+  <% if current_user.certified? %>
     <%= link_to new_scene_path do %>
       <div class="card-trip effect">
         <div class="card-trip-infos">

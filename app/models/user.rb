@@ -21,5 +21,6 @@ class User < ApplicationRecord
 
   def is_a_jedi_master?
     self.level == 100
+    self.certification = true
   end
 end
